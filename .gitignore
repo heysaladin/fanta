@@ -64,3 +64,34 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+
+
+# =================================
+
+# BLOG
+
+# Ignore everything in the root except the "wp-content" directory.
+blog/*
+!blog/.gitignore
+!blog/wp-content/
+!blog/wp-config.php
+
+# Ignore everything in the "wp-content" directory, except the "plugins"
+# and "themes" directories.
+blog/wp-content/*
+!blog/wp-content/plugins/
+!blog/wp-content/themes/
+
+# Ignore everything in the "plugins" directory, except the plugins you
+# specify (see the commented-out examples for hints on how to do this.)
+blog/wp-content/plugins/*
+# !wp-content/plugins/my-single-file-plugin.php
+# !wp-content/plugins/my-directory-plugin/
+
+# Ignore everything in the "themes" directory, except the themes you
+# specify (see the commented-out example for a hint on how to do this.)
+blog/wp-content/themes/*
+# !wp-content/themes/my-theme/
+
+# =================================
