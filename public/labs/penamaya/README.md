@@ -1,4 +1,2 @@
 # penamaya
 penamaya
-
-Jekyll...
