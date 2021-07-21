@@ -31,8 +31,20 @@ github_username:  jekyll
 
 # Build settings
 theme: minima
+
+# theme: jekyll-theme-hacker
+
 plugins:
   - jekyll-feed
+
+# defaults:
+#   - 
+#     scope:
+#       path: ""
+#       typo: "post"
+#     values:
+#         layout: "post"
+#         title: "My Title"
 
 # Exclude from processing.
 # The following items will not be processed, by default.
