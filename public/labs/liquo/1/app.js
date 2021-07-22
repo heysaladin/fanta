@@ -58,25 +58,25 @@ export default class Sketch{
 
     addObjects() {
 
-        this.geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
-        this.geometry = new THREE.SphereBufferGeometry( 0.2, 4, 4 );
-        this.material = new THREE.MeshNormalMaterial();
+        // this.geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
+        this.geometry = new THREE.SphereBufferGeometry( 0.2, 3, 3 );
+        // this.material = new THREE.MeshNormalMaterial();
         this.material = new THREE.MeshBasicMaterial({
-            color: 0xdfe043
+            color: 0xa4fe84
         });
         // this.material = this.THREE.MeshLambertMaterial();
-        this.material = this.THREE.ShaderMaterial({
-            uniforms: {
-                time: {
-                    value: 1.0
-                },
-                resolution: {
-                    value: new THREE.Vector2()
-                }
-            },
-            vertexShader,
-            fragmentShader,
-        });
+        // this.material = this.THREE.ShaderMaterial({
+        //     uniforms: {
+        //         time: {
+        //             value: 1.0
+        //         },
+        //         resolution: {
+        //             value: new THREE.Vector2()
+        //         }
+        //     },
+        //     vertexShader,
+        //     fragmentShader,
+        // });
     
         this.mesh = new THREE.Mesh( this.geometry, this.material );
         this.scene.add( this.mesh );

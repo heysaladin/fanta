@@ -469,10 +469,10 @@ class Sketch {
   }
   addObjects() {
     // this.geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
-    this.geometry = new _three.SphereBufferGeometry(0.2, 3, 3);
+    this.geometry = new _three.SphereBufferGeometry(0.2, 4, 4);
     // this.material = new THREE.MeshNormalMaterial();
     this.material = new _three.MeshBasicMaterial({
-      color: 0xa4fe84
+      color: 0xdfe043
     });
     // this.material = this.THREE.MeshLambertMaterial();
     // this.material = this.THREE.ShaderMaterial({
@@ -31142,4 +31142,4 @@ class MapControls extends OrbitControls {
 
 },{"three":"1lq1c","@parcel/transformer-js/lib/esmodule-helpers.js":"7clfU"}]},["2FmRy","6fOLN"], "6fOLN", "parcelRequire427e")
 
-//# sourceMappingURL=index.1397955d.js.map
+//# sourceMappingURL=index.HASH_REF_147c3be9838f78fc816d5dfc1397955d.js.map
