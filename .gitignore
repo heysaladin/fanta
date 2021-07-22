@@ -110,3 +110,5 @@ Thumbs.db
 .phpunit.result.cache
 
 # =================================
+
+public/labs/liquo/1/node_modules/
