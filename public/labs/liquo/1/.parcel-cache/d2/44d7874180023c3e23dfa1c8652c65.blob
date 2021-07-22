@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn WebGL</title>
+    <style data-parcel-key="cdd1baffece2cf6c5cd3938a844e31ad">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        canvas{
+            display: block;
+        }
+        #container{
+            height: 100vh;
+            width: 100vw;
+            background: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <script src="f2f8a22bcff0afc2e0d4c9e559c00b60"></script>
+</body>
+</html>
