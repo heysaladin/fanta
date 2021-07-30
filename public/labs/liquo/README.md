@@ -1,4 +1,2 @@
 # liquo
 liquo
-
-Learn WebGL
