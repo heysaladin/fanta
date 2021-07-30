@@ -2,5 +2,3 @@
 liquo
 
 Learn WebGL
-
-Yuri
