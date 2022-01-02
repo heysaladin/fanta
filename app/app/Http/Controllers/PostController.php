@@ -36,6 +36,7 @@ class PostController extends Controller
   {
     $post = new Posts();
     $post->title = $request->get('title');
+    $post->image = $request->get('image');
     $post->body = $request->get('body');
     $post->slug = Str::slug($post->title);
 
@@ -94,6 +95,7 @@ class PostController extends Controller
       }
 
       $post->title = $title;
+      $post->image = $image;
       $post->body = $request->input('body');
 
       if ($request->has('save')) {
@@ -112,7 +114,7 @@ class PostController extends Controller
     }
   }
 
-  
+
   public function destroy(Request $request, $id)
   {
     //
