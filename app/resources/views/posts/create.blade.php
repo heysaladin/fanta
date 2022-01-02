@@ -13,6 +13,7 @@ Add New Post
 </script>
 <form action="/new-post" method="post">
   <input type="hidden" name="_token" value="{{ csrf_token() }}">
+  <input type="hidden" name="category" value="1">
   <div class="form-group">
     <input required="required" value="{{ old('title') }}" placeholder="Enter title here" type="text" name = "title"class="form-control" />
   </div>

@@ -19,17 +19,29 @@ class Posts extends Migration
             $table->unsignedBigInteger('author_id');
             $table->foreign('author_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title')->unique();
-            $table->text('body');
+            $table->longText('body');
 
             $table->string('image')->default('');
-            $table->string('real_date')->default('');
             $table->boolean('open')->default(1);
-            $table->string('status')->default('');
-            $table->string('category')->default('');
+            $table->boolean('is_real_project')->default(1);
+            $table->string('real_date')->default('');
 
             $table->string('slug')->unique();
             $table->boolean('active');
             $table->timestamps();
+
+            $table->string('keywords')->default('');
+            $table->text('meta_desc')->nullable();
+
+            $table->foreignId('category_id')
+                    ->constrained()
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
+
+            // $table->unsignedBigInteger('category_id');
+            // $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+
+            $table->softDeletes();
         });
     }
 

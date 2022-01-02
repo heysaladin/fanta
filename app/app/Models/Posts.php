@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 // Posts class instance will refer to posts table in database
 class Posts extends Model
@@ -22,4 +24,22 @@ class Posts extends Model
   {
     return $this->belongsTo('App\Models\User', 'author_id');
   }
+
+  use HasFactory, SoftDeletes;
+
+  public function category()
+  {
+      return $this->belongsTo(Category::class);
+  }
+
+  // public function user()
+  // {
+  //     return $this->belongsTo(User::class);
+  // }
+
+  public function tags()
+  {
+      return $this->belongsToMany(Tag::class);
+  }
+
 }

@@ -6,6 +6,8 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 use App\Models\Posts;
+use App\Models\Category;
+use App\Models\Tag;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostFormRequest;
 
@@ -23,9 +25,11 @@ class PostController extends Controller
 
     public function create(Request $request)
     {
+        $categories = Category::all();
+        $tags       = Tag::all();
         // 
         if ($request->user()->can_post()) {
-        return view('posts.create');
+        return view('posts.create', compact('categories','tags'));
         } else {
         return redirect('/')->withErrors('You have not sufficient permissions for writing post');
         }
@@ -38,6 +42,11 @@ class PostController extends Controller
     $post->title = $request->get('title');
     $post->image = $request->get('image');
     $post->body = $request->get('body');
+
+    $post->open = 1;
+    $post->is_real_project = 1;
+    $post->category_id = $request->get('category');
+
     $post->slug = Str::slug($post->title);
 
     $duplicate = Posts::where('slug', $post->slug)->first();
@@ -54,6 +63,9 @@ class PostController extends Controller
       $message = 'Post published successfully';
     }
     $post->save();
+
+    $post->tags()->attach($request->tags);
+
     return redirect('edit/' . $post->slug)->withMessage($message);
   }
 
@@ -84,6 +96,7 @@ class PostController extends Controller
     $post = Posts::find($post_id);
     if ($post && ($post->author_id == $request->user()->id || $request->user()->is_admin())) {
       $title = $request->input('title');
+      $image = $request->input('image');
       $slug = Str::slug($title);
       $duplicate = Posts::where('slug', $slug)->first();
       if ($duplicate) {
