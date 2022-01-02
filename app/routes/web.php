@@ -21,9 +21,15 @@ use Illuminate\Support\Facades\Route;
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-
 Route::get('/', 'App\Http\Controllers\PostController@index');
 Route::get('/home', ['as' => 'home', 'uses' => 'App\Http\Controllers\PostController@index']);
+
+
+Route::get('categories', 'App\Http\Controllers\CategoryController@index');
+// add categories
+Route::post('categories/add', 'App\Http\Controllers\CategoryController@store');
+Route::post('categories/destroy/{id}', 'App\Http\Controllers\CategoryController@destroy');
+Route::post('categories/update/{id}', 'App\Http\Controllers\CategoryController@update');
 
 //authentication
 // Route::resource('auth', 'Auth\AuthController');
@@ -52,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
   // add comment
   Route::post('comment/add', 'App\Http\Controllers\CommentController@store');
   // delete comment
-  Route::post('comment/delete/{id}', 'App\Http\Controllers\CommentController@distroy');
+  Route::post('comment/delete/{id}', 'App\Http\Controllers\CommentController@destroy');
 });
 
 //users profile
