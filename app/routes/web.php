@@ -31,6 +31,14 @@ Route::post('categories/add', 'App\Http\Controllers\CategoryController@store');
 Route::post('categories/destroy/{id}', 'App\Http\Controllers\CategoryController@destroy');
 Route::post('categories/update/{id}', 'App\Http\Controllers\CategoryController@update');
 
+
+Route::get('tags', 'App\Http\Controllers\TagController@index');
+// add tags
+Route::post('tags/add', 'App\Http\Controllers\TagController@store');
+Route::post('tags/destroy/{id}', 'App\Http\Controllers\TagController@destroy');
+Route::post('tags/update/{id}', 'App\Http\Controllers\TagController@update');
+
+
 //authentication
 // Route::resource('auth', 'Auth\AuthController');
 // Route::resource('password', 'Auth\PasswordController');
