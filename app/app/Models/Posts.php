@@ -25,6 +25,11 @@ class Posts extends Model
     return $this->belongsTo('App\Models\User', 'author_id');
   }
 
+  public function support_author()
+  {
+    return $this->belongsTo('App\Models\User', 'support_author_id');
+  }
+
   use HasFactory, SoftDeletes;
 
   public function category()

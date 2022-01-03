@@ -16,7 +16,7 @@ class PostController extends Controller
     public function index()
     {
         //fetch 5 posts from database which are active and latest
-        $posts = Posts::where('active',1)->orderBy('created_at','desc')->paginate(5);
+        $posts = Posts::where('active',1)->orderBy('created_at','desc')->paginate(6);
         //page heading
         $title = 'Latest Posts';
         //return home.blade.php template from resources/views folder
@@ -46,6 +46,8 @@ class PostController extends Controller
     $post->open = 1;
     $post->is_real_project = 1;
     $post->category_id = $request->get('category');
+
+    $post->support_author_id = $request->get('support_author_id');
 
     $post->slug = Str::slug($post->title);
 
