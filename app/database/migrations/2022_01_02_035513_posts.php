@@ -44,6 +44,8 @@ class Posts extends Migration
             $table->unsignedBigInteger('support_author_id')->nullable();
             $table->foreign('support_author_id')->references('id')->on('users')->onDelete('cascade');
 
+            $table->string('copyright')->default('');
+
             $table->softDeletes();
         });
     }
