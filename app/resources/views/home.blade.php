@@ -7,7 +7,7 @@
 @if ( !$posts->count() )
 There is no post till now. Login and write a new post now!!!
 @else
-<div class="">
+<div class="scrolling-pagination">
 
   <style>
     .card {
@@ -81,6 +81,7 @@ There is no post till now. Login and write a new post now!!!
   </div> -->
 
   @endforeach
+  {{ $posts->links() }}
   {!! $posts->render() !!}
 </div>
 @endif
