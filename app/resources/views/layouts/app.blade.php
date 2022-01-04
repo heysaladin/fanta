@@ -124,20 +124,129 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vibrant.js/1.0.0/Vibrant.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jscroll/2.4.1/jquery.jscroll.min.js"></script>
     <script type="text/javascript">
+      $(document).ready(function() {
+
+
+
+
+        // function encodeImageFileAsURL(url) {
+
+        //   var filesSelected = url;//document.getElementById("inputFileToLoad").files;
+
+        //   if (filesSelected.length > 0) {
+        //   console.log(filesSelected[0]);
+        //     var fileToLoad = filesSelected[0];
+        //     var fileReader = new FileReader();
+
+        //     fileReader.onload = function(fileLoadedEvent) {
+        //       var srcData = fileLoadedEvent.target.result; // <--- data: base64
+        //       var newImage = document.createElement('img');
+        //       newImage.src = srcData;
+        //       document.getElementById("imgTest").innerHTML = newImage.outerHTML;
+        //       //alert("Converted Base64 version is " + document.getElementById("imgTest").innerHTML);
+        //       document.getElementById("divDynamic").innerHTML = newImage.src;
+              
+        //       console.log("Converted Base64 version is " + document.getElementById("imgTest").innerHTML);
+        //     } //End of fileReader.onload      
+        //     fileReader.readAsDataURL(fileToLoad);
+        //   } //End of If Loop if (filesSelected....)
+        //   }//End of Function encodeImageFileAsUrl
+
+
+
+
+
         $('ul.pagination').hide();
         $(function() {
             $('.scrolling-pagination').jscroll({
                 autoTrigger: true,
                 padding: 0,
+                debug: true,
+                loadingHtml: '<img class="center-block" src="/images/loading.gif" alt="Loading..." />',
                 nextSelector: '.pagination li.active + li a',
                 contentSelector: 'div.scrolling-pagination',
                 callback: function() {
                     $('ul.pagination').remove();
+
+                    // // console.log(document.getElementsByClassName('card-img-top').length);
+
+                    // for (let i = 0; i < document.getElementsByClassName('card-img-top').length; i++) {
+                    //   var item = document.getElementsByClassName('card-img-top')[i];
+
+                    //   if(item.clientWidth != 0 && item.clientWidth < item.clientHeight) {
+
+                    //     // item.src = item.src+'?callback=?';
+                    //     // item.setAttribute('crossOrigin', 'anonymous');
+
+
+                    //     // encodeImageFileAsURL(item.src);
+
+                    //     console.log(item.clientWidth);
+                    //     console.log(item.clientHeight);
+
+                    //     // Storage::put(item.id+".png", item.src);
+
+                    //     // jQuery.ajax({
+                    //     //     url: item.src,
+                    //     //     type: 'GET',
+                    //     //     data: {},
+                    //     //     success:function(msg){
+
+                    //     //         if(msg>0)
+                    //     //         {
+
+                    //     //             window.location.href = "url('get/'" + item.id + ")";
+
+
+                    //     //         }
+                    //     //     }
+                    //     //     });
+
+                    //     // // console.log(item);
+                    //     // // item.addEventListener('load', function() {
+                    //     //     var vibrant = new Vibrant(item);
+                    //     //     var swatches = vibrant.swatches();
+                    //     //     console.log(vibrant);
+                    //     //     console.log(swatches);
+                    //     //     for (var swatch in swatches){
+                    //     //         if (swatches.hasOwnProperty(swatch) && swatches[swatch]){
+                    //     //             console.log(swatch, swatches[swatch].getHex());
+
+                    //     //     /*
+                    //     //     * Results into:
+                    //     //     * Vibrant #7a4426
+                    //     //     * Muted #7b9eae
+                    //     //     * DarkVibrant #348945
+                    //     //     * DarkMuted #141414
+                    //     //     * LightVibrant #f3ccb4
+                    //     //     */
+                    //     //   }
+                    //     // }
+                    //     // });
+
+                    //     // const colorThief = new ColorThief();
+                    //     // // const img = document.querySelector('img');
+
+                    //     // // Make sure image is finished loading
+                    //     // if (item.complete) {
+                    //     //   colorThief.getColor(item);
+                    //     // } else {
+                    //     //   item.addEventListener('load', function() {
+                    //     //     colorThief.getColor(item);
+                    //     //   });
+                    //     // }
+
+                    //   }
+                    // } 
+
                 }
             });
         });
+      });
     </script>
   </body>
 </html>

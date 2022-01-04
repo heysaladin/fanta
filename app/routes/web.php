@@ -25,6 +25,9 @@ Route::get('/', 'App\Http\Controllers\PostController@index');
 Route::get('/home', ['as' => 'home', 'uses' => 'App\Http\Controllers\PostController@index']);
 
 
+Route::get('get/{filename}', 'App\Http\Controllers\FileController::class@getfile');
+
+
 Route::get('categories', 'App\Http\Controllers\CategoryController@index');
 // add categories
 Route::post('categories/add', 'App\Http\Controllers\CategoryController@store');
@@ -75,8 +78,6 @@ Route::get('user/{id}', 'App\Http\Controllers\UserController@profile')->where('i
 Route::get('user/{id}/posts', 'App\Http\Controllers\UserController@user_posts')->where('id', '[0-9]+');
 // display single post
 Route::get('/{slug}', ['as' => 'post', 'uses' => 'App\Http\Controllers\PostController@show'])->where('slug', '[A-Za-z0-9-_]+');
-
-
 
 Auth::routes();
 

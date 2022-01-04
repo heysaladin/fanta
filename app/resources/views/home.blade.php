@@ -23,6 +23,7 @@ There is no post till now. Login and write a new post now!!!
     }
   </style>
 
+
   @foreach( $posts as $post )
 
   <div class="col-md-4 blogbox" data-aos="fade-up" data-aos-duration="200">
@@ -36,7 +37,7 @@ There is no post till now. Login and write a new post now!!!
       justify-content: center;
       align-items: stretch;
       ">
-        <img src="{{ $post->image }}" class="bd-placeholder-img card-img-top" width="100%" height="auto" alt="{{ $post->title }}" style="
+        <img id="{{ 'image'.$post->id }}" src="{{ $post->image }}" class="bd-placeholder-img card-img-top" width="100%" height="auto" alt="{{ $post->title }}" style="
         position:absolute;
         height: 100%;
         width: auto;">
@@ -44,7 +45,7 @@ There is no post till now. Login and write a new post now!!!
       </a>
 
       <div class="card-body">
-        <h3>{{ $post->title }}</h3>
+        <h3 class="card-title">{{ $post->title }}</h3>
         <p class="card-text">{!! Str::limit($post->body, $limit = 1500, $end = '....... <a href='.url("/".$post->slug).'>Read More</a>') !!}</p>
         <div class="d-flex justify-content-between align-items-center">
           <a href="" class="blog-categories">{{ $post->category->name }}</a>
@@ -70,6 +71,22 @@ There is no post till now. Login and write a new post now!!!
     </div>
   </div>
 
+
+
+<!-- <script>
+        // if (document.readyState === 'complete') {
+        // var title = document.querySelector(".card-title");
+        var imageItem = document.querySelector("{{'#image'.$post->id}}");
+        console.log(imageItem.id);
+        // title.style.color = "red";
+        // imgSize();
+        // var currWidth = imageItem.clientWidth;
+        // var currHeight = imageItem.clientHeight;
+        // console.log("Current width=" + currWidth + ", " + "Original height=" + currHeight);
+        // function imgSize(){}
+        // }
+      </script> -->
+
   <!-- <div class="list-group">
     <div class="list-group-item">
       <h3><a href="{{ url('/'.$post->slug) }}">{{ $post->title }}</a>
@@ -92,10 +109,13 @@ There is no post till now. Login and write a new post now!!!
     </div>
   </div> -->
 
+
   @endforeach
   {{ $posts->links() }}
   {!! $posts->render() !!}
 </div>
+
+
 @endif
 @endif
 @endsection
