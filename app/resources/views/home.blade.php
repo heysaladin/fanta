@@ -23,13 +23,12 @@ There is no post till now. Login and write a new post now!!!
     }
   </style>
 
-
   @foreach( $posts as $post )
 
   <div class="col-md-4 blogbox" data-aos="fade-up" data-aos-duration="200">
     <div class="card mb-4 shadow-sm card-body flex-fill">
       <a href="{{ url('/'.$post->slug) }}">
-      <div class="image" style="
+      <div class="image" id="{{ 'imageWrapper'.$post->id }}" style="
       position:relative;
       overflow:hidden;
       padding-bottom:100%;
@@ -71,50 +70,10 @@ There is no post till now. Login and write a new post now!!!
     </div>
   </div>
 
-
-
-<!-- <script>
-        // if (document.readyState === 'complete') {
-        // var title = document.querySelector(".card-title");
-        var imageItem = document.querySelector("{{'#image'.$post->id}}");
-        console.log(imageItem.id);
-        // title.style.color = "red";
-        // imgSize();
-        // var currWidth = imageItem.clientWidth;
-        // var currHeight = imageItem.clientHeight;
-        // console.log("Current width=" + currWidth + ", " + "Original height=" + currHeight);
-        // function imgSize(){}
-        // }
-      </script> -->
-
-  <!-- <div class="list-group">
-    <div class="list-group-item">
-      <h3><a href="{{ url('/'.$post->slug) }}">{{ $post->title }}</a>
-        @if(!Auth::guest() && ($post->author_id == Auth::user()->id || Auth::user()->is_admin()))
-          @if($post->active == '1')
-          <button class="btn" style="float: right"><a href="{{ url('edit/'.$post->slug)}}">Edit Post</a></button>
-          @else
-          <button class="btn" style="float: right"><a href="{{ url('edit/'.$post->slug)}}">Edit Draft</a></button>
-          @endif
-        @endif
-      </h3>
-      <br/>
-      <img src="{{ $post->image }}" width=300 />
-      <p>{{ $post->created_at->format('M d,Y \a\t h:i a') }} By <a href="{{ url('/user/'.$post->author_id)}}">{{ $post->author->name }}</a></p>
-    </div>
-    <div class="list-group-item">
-      <article>
-        {!! Str::limit($post->body, $limit = 1500, $end = '....... <a href='.url("/".$post->slug).'>Read More</a>') !!}
-      </article>
-    </div>
-  </div> -->
-
-
   @endforeach
   {{ $posts->links() }}
   {!! $posts->render() !!}
 </div>
-
 
 @endif
 @endif

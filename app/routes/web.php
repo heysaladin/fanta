@@ -13,20 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-// });
-
-// Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::get('/', 'App\Http\Controllers\PostController@index');
 Route::get('/home', ['as' => 'home', 'uses' => 'App\Http\Controllers\PostController@index']);
-
-
-Route::get('get/{filename}', 'App\Http\Controllers\FileController::class@getfile');
-
 
 Route::get('categories', 'App\Http\Controllers\CategoryController@index');
 // add categories
