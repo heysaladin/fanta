@@ -28,7 +28,19 @@ There is no post till now. Login and write a new post now!!!
   <div class="col-md-4 blogbox" data-aos="fade-up" data-aos-duration="200">
     <div class="card mb-4 shadow-sm card-body flex-fill">
       <a href="{{ url('/'.$post->slug) }}">
-        <img src="{{ $post->image }}" class="bd-placeholder-img card-img-top" width="100%" height="auto" alt="">
+      <div class="image" style="
+      position:relative;
+      overflow:hidden;
+      padding-bottom:100%;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      ">
+        <img src="{{ $post->image }}" class="bd-placeholder-img card-img-top" width="100%" height="auto" alt="{{ $post->title }}" style="
+        position:absolute;
+        height: 100%;
+        width: auto;">
+      </div>
       </a>
 
       <div class="card-body">
