@@ -44,26 +44,25 @@ There is no post till now. Login and write a new post now!!!
       </a>
 
       <div class="card-body">
-        <h3 class="card-title">{{ $post->title }}</h3>
-        <p class="card-text">{!! Str::limit($post->body, $limit = 1500, $end = '....... <a href='.url("/".$post->slug).'>Read More</a>') !!}</p>
-        <div class="d-flex justify-content-between align-items-center">
-          <a href="" class="blog-categories">{{ $post->category->name }}</a>
-          <br/>
-          <small class="text-muted">
-            {{ $post->created_at->format('M d,Y \a\t h:i a') }} By 
+        <h3 class="card-title">{!! Str::limit($post->title, $limit = 24, $end = '...') !!}</h3>
+        <!-- <h3 class="card-title">{{ $post->title }}</h3> -->
+        <!-- <p class="card-text">{!! Str::limit($post->body, $limit = 1500, $end = '....... <a href='.url("/".$post->slug).'>Read More</a>') !!}</p> -->
+        <div class="d-flex justify-content-between align-items-center" style="margin: 16px 0 0; width: 100%; display: flex; justify-content: space-between; align-items: center;">
+          <span class="text-muted" style="font-weight: bold;">
+            <!-- {{ $post->created_at->format('M d,Y \a\t h:i a') }} By  -->
             <a href="{{ url('/user/'.$post->author_id)}}">{{ $post->author->name }}</a>
             @if($post->support_author_id != NULL)
             x <a href="{{ url('/user/'.$post->support_author_id)}}">{{ $post->support_author->name }}</a>
             @endif
-        </small>
+          </span>
+          <a href="" class="blog-categories">{{ $post->category->name }}</a>
         </div>
         @if(!Auth::guest() && ($post->author_id == Auth::user()->id || Auth::user()->is_admin()))
           @if($post->active == '1')
-          <br/>
-          <button class="btn" style="float: none"><a href="{{ url('edit/'.$post->slug)}}">Edit Post</a></button>
+          <button style="margin: 12px 0 0;" class="btn" style="float: none"><a href="{{ url('edit/'.$post->slug)}}">Edit Post</a></button>
           @else
           <br/>
-          <button class="btn" style="float: none"><a href="{{ url('edit/'.$post->slug)}}">Edit Draft</a></button>
+          <button style="margin: 12px 0 0;" class="btn" style="float: none"><a href="{{ url('edit/'.$post->slug)}}">Edit Draft</a></button>
           @endif
         @endif
       </div>

@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li>
-              <a href="{{ url('/') }}">Home</a>
+              <a href="{{ url('/') }}">Portfolios</a>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
