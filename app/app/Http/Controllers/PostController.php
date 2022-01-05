@@ -16,7 +16,7 @@ class PostController extends Controller
     public function index()
     {
         //fetch 5 posts from database which are active and latest
-        $posts = Posts::where('active',1)->orderBy('created_at','desc')->paginate(3);
+        $posts = Posts::where('active',1)->orderBy('real_date','desc')->paginate(12);
         //page heading
         $title = 'Latest Posts';
         //return home.blade.php template from resources/views folder
@@ -64,6 +64,13 @@ class PostController extends Controller
       $post->active = 1;
       $message = 'Post published successfully';
     }
+
+    $post->real_date = $request->get('real_date');
+    $post->keywords = $request->get('keywords');
+    $post->meta_desc = $request->get('meta_desc');
+    $post->copyright = $request->get('copyright');
+    $post->support_author_id = $request->get('support_author_id');
+
     $post->save();
 
     $post->tags()->attach($request->tags);
@@ -99,6 +106,13 @@ class PostController extends Controller
     if ($post && ($post->author_id == $request->user()->id || $request->user()->is_admin())) {
       $title = $request->input('title');
       $image = $request->input('image');
+      
+      $real_date = $request->get('real_date');
+      $keywords = $request->get('keywords');
+      $meta_desc = $request->get('meta_desc');
+      $copyright = $request->get('copyright');
+      $support_author_id = $request->get('support_author_id');
+
       $slug = Str::slug($title);
       $duplicate = Posts::where('slug', $slug)->first();
       if ($duplicate) {
@@ -122,6 +136,13 @@ class PostController extends Controller
         $message = 'Post updated successfully';
         $landing = $post->slug;
       }
+
+      $post->real_date = $real_date;
+      $post->keywords = $keywords;
+      $post->meta_desc = $meta_desc;
+      $post->copyright = $copyright;
+      $post->support_author_id = $support_author_id;
+
       $post->save();
       return redirect($landing)->withMessage($message);
     } else {

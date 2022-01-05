@@ -3,8 +3,8 @@
   @if($post)
     {{ $post->title }}
 
-    <br/>
-    <img src="{{ $post->image }}" width=300 />
+    <!-- <br/>
+    <img src="{{ $post->image }}" width=300 /> -->
 
     @if(!Auth::guest() && ($post->author_id == Auth::user()->id || Auth::user()->is_admin()))
       <button class="btn" style="float: right"><a href="{{ url('edit/'.$post->slug)}}">Edit Post</a></button>
