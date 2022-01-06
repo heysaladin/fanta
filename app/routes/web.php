@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\PostController@index');
 Route::get('/home', ['as' => 'home', 'uses' => 'App\Http\Controllers\PostController@index']);
 
+Route::get('/posts/category/{id}', 'App\Http\Controllers\PostController@category');
+
 Route::get('categories', 'App\Http\Controllers\CategoryController@index');
 // add categories
 Route::post('categories/add', 'App\Http\Controllers\CategoryController@store');
