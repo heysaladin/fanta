@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('title')
+@if(!Request::is('user/*'))
 <div class="navigation">
   <div class="tab">
     <button class="tablinks" onclick="location.href='{{ url('/') }}';" value="All">All</button>
@@ -13,6 +14,7 @@
   </div>
 </div>
 <!-- {{ $title ?? '' }} -->
+@endif
 @endsection
 @section('content')
 @if(isset($posts))
