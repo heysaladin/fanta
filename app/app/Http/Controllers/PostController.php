@@ -45,7 +45,7 @@ class PostController extends Controller
 
     $post->open = 1;
     $post->is_real_project = 1;
-    $post->category_id = $request->get('category');
+    $post->category_id = $request->get('category_id');
 
     $post->support_author_id = $request->get('support_author_id');
 
@@ -106,6 +106,10 @@ class PostController extends Controller
     if ($post && ($post->author_id == $request->user()->id || $request->user()->is_admin())) {
       $title = $request->input('title');
       $image = $request->input('image');
+
+      $open = 1;
+      $is_real_project = 1;
+      $category_id = $request->get('category_id');
       
       $real_date = $request->get('real_date');
       $keywords = $request->get('keywords');
@@ -122,6 +126,10 @@ class PostController extends Controller
           $post->slug = $slug;
         }
       }
+
+      $post->open = $open;
+      $post->is_real_project = $is_real_project;
+      $post->category_id = $category_id;
 
       $post->title = $title;
       $post->image = $image;
