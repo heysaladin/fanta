@@ -69,6 +69,10 @@ Route::get('user/{id}/posts', 'App\Http\Controllers\UserController@user_posts')-
 // display single post
 Route::get('/{slug}', ['as' => 'post', 'uses' => 'App\Http\Controllers\PostController@show'])->where('slug', '[A-Za-z0-9-_]+');
 
+
+Route::get('user/{id}/posts/collaboration', 'App\Http\Controllers\UserController@user_posts_collaboration')->where('id', '[0-9]+');
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

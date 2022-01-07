@@ -19,21 +19,28 @@
           <td>Total Posts</td>
           <td> {{$posts_count}}</td>
           @if($author && $posts_count)
-          <td><a href="{{ url('/my-all-posts')}}">Show All</a></td>
+          <td><a href="{{ url('/my-all-posts') }}">Show All</a></td>
           @endif
         </tr>
         <tr>
           <td>Published Posts</td>
           <td>{{$posts_active_count}}</td>
           @if($posts_active_count)
-          <td><a href="{{ url('/user/'.$user->id.'/posts')}}">Show All</a></td>
+          <td><a href="{{ url('/user/'.$user->id.'/posts') }}">Show All</a></td>
           @endif
         </tr>
         <tr>
           <td>Posts in Draft </td>
           <td>{{$posts_draft_count}}</td>
           @if($author && $posts_draft_count)
-          <td><a href="{{ url('my-drafts')}}">Show All</a></td>
+          <td><a href="{{ url('my-drafts') }}">Show All</a></td>
+          @endif
+        </tr>
+        <tr>
+          <td>Collaboration Posts (as second author)</td>
+          <td> {{$collaboration_count}}</td>
+          @if($collaboration_count > 0)
+          <td><a href="{{ url('/user/'.$user->id.'/posts/collaboration') }}">Show All</a></td>
           @endif
         </tr>
       </table>

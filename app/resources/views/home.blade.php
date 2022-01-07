@@ -1,6 +1,18 @@
 @extends('layouts.app')
 @section('title')
-{{ $title ?? '' }}
+<div class="navigation">
+  <div class="tab">
+    <button class="tablinks" onclick="location.href='{{ url('/') }}';" value="All">All</button>
+    <button class="tablinks" onclick="location.href='{{ url('/posts/category/1') }}';" value="UI Design">UI Design</button>
+    <button class="tablinks" onclick="location.href='{{ url('/posts/category/2') }}';" value="UX Design">UX Design</button>
+    <button class="tablinks" onclick="location.href='{{ url('/posts/category/3') }}';" value="Illustration">Illustration</button>
+    <button class="tablinks" onclick="location.href='{{ url('/posts/category/4') }}';" value="3D">3D</button>
+    <button class="tablinks" onclick="location.href='{{ url('/posts/category/5') }}';" value="Graphic Design">Graphic Design</button>
+    <button class="tablinks" onclick="location.href='{{ url('/posts/category/6') }}';" value="Branding">Branding</button>
+    <button class="tablinks" onclick="location.href='{{ url('/posts/category/7') }}';" value="Development">Development</button>
+  </div>
+</div>
+<!-- {{ $title ?? '' }} -->
 @endsection
 @section('content')
 @if(isset($posts))

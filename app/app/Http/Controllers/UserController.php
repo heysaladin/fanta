@@ -10,6 +10,19 @@ use App\Models\Posts;
 use Illuminate\Http\Request;
 
 class UserController extends Controller {
+
+
+
+  public function user_posts_collaboration($id)
+  {
+    //
+    $posts = Posts::where('support_author_id',$id)->where('active',1)->orderBy('real_date','desc')->paginate(5);
+    $title = User::find($id)->name;
+    return view('home')->withPosts($posts)->withTitle($title);
+  }
+
+
+
   /*
    * Display active posts of a particular user
    * 
@@ -64,6 +77,9 @@ class UserController extends Controller {
     } else {
       $data['author'] = null;
     }
+
+    $data['collaboration_count'] = Posts::where('support_author_id',$id) -> count();
+
     $data['comments_count'] = $data['user'] -> comments -> count();
     $data['posts_count'] = $data['user'] -> posts -> count();
     $data['posts_active_count'] = $data['user'] -> posts -> where('active', '1') -> count();
