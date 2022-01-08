@@ -3,14 +3,14 @@
 @if(!Request::is('user/*'))
 <div class="navigation">
   <div class="tab">
-    <button class="tablinks" onclick="location.href='{{ url('/') }}';" value="All">All</button>
-    <button class="tablinks" onclick="location.href='{{ url('/posts/category/1') }}';" value="UI Design">UI Design</button>
-    <button class="tablinks" onclick="location.href='{{ url('/posts/category/2') }}';" value="UX Design">UX Design</button>
-    <button class="tablinks" onclick="location.href='{{ url('/posts/category/3') }}';" value="Illustration">Illustration</button>
-    <button class="tablinks" onclick="location.href='{{ url('/posts/category/4') }}';" value="3D">3D</button>
-    <button class="tablinks" onclick="location.href='{{ url('/posts/category/5') }}';" value="Graphic Design">Graphic Design</button>
-    <button class="tablinks" onclick="location.href='{{ url('/posts/category/6') }}';" value="Branding">Branding</button>
-    <button class="tablinks" onclick="location.href='{{ url('/posts/category/7') }}';" value="Development">Development</button>
+    <button class="tablinks" onclick="location.href='{{ url('/') }}'" value="All">All</button>
+    <button class="tablinks" onclick="location.href='{{ url('/posts/category/1') }}'" value="UI Design">UI Design</button>
+    <button class="tablinks" onclick="location.href='{{ url('/posts/category/2') }}'" value="UX Design">UX Design</button>
+    <button class="tablinks" onclick="location.href='{{ url('/posts/category/3') }}'" value="Illustration">Illustration</button>
+    <button class="tablinks" onclick="location.href='{{ url('/posts/category/4') }}'" value="3D">3D</button>
+    <button class="tablinks" onclick="location.href='{{ url('/posts/category/5') }}'" value="Graphic Design">Graphic Design</button>
+    <button class="tablinks" onclick="location.href='{{ url('/posts/category/6') }}'" value="Branding">Branding</button>
+    <button class="tablinks" onclick="location.href='{{ url('/posts/category/7') }}'" value="Development">Development</button>
   </div>
 </div>
 <!-- {{ $title ?? '' }} -->
@@ -69,7 +69,7 @@ There is no post till now. Login and write a new post now!!!
             x <a href="{{ url('/user/'.$post->support_author_id)}}">{{ $post->support_author->name }}</a>
             @endif
           </span>
-          <a href="" class="blog-categories">{{ $post->category->name }}</a>
+          <a href="{{ url('/posts/category/'.$post->category_id) }}" class="blog-categories">{{ $post->category->name }}</a>
         </div>
         @if(!Auth::guest() && ($post->author_id == Auth::user()->id || Auth::user()->is_admin()))
           @if($post->active == '1')
