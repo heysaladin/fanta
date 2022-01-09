@@ -84,7 +84,7 @@
       </div>
       @endif
 
-      {{-- <div class="row">
+      <div class="row">
         <div class="panel-heading">
           <h2>@yield('title')</h2>
           @yield('title-meta')
@@ -94,14 +94,14 @@
         <div class="panel-body">
           @yield('content')
         </div>
-      </div> --}}
+      </div>
 
     </main>
 
 
 
 
-    <div id="wrap">
+    {{-- <div id="wrap">
       <div class="filter-subnav container-fluid">
         <h2>@yield('title')</h2>
         @yield('title-meta')
@@ -114,7 +114,7 @@
         </div>
       </div>
     </div>
-
+    
     <style>
       #wrap {
         -ms-flex: 1 0 auto;
@@ -122,9 +122,9 @@
         background: #fff;
       }
       .container-fluid {
-    padding-right: 32px;
-    padding-left: 32px;
-}
+          padding-right: 32px;
+          padding-left: 32px;
+      }
         #wrap-inner {
           -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -166,7 +166,7 @@
           -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
       }
-    </style>
+    </style> --}}
 
 
     <div class="row">
@@ -195,6 +195,46 @@
                 }
             });
         });
+
+
+
+        // $(".scrolling-pagination").removeClass("js-thumbnail-grid");
+        // $(".scrolling-pagination").removeClass("shots-grid");
+        // $(".scrolling-pagination").removeClass("group");
+        // $(".scrolling-pagination").removeClass("dribbbles");
+        // $(".scrolling-pagination").removeClass("container-fluid");
+        // setTimeout(function() {
+        // $(".jscroll-inner").addClass("js-thumbnail-grid");
+        // $(".jscroll-inner").addClass("shots-grid");
+        // $(".jscroll-inner").addClass("group");
+        // $(".jscroll-inner").addClass("dribbbles");
+        // $(".jscroll-inner").addClass("container-fluid");
+        // $(".jscroll-added").addClass("js-thumbnail-grid");
+        // $(".jscroll-added").addClass("shots-grid");
+        // $(".jscroll-added").addClass("group");
+        // $(".jscroll-added").addClass("dribbbles");
+        // $(".jscroll-added").addClass("container-fluid");
+        // }, 1);
+
+        // setTimeout(function() {
+        //   $(".scrolling-pagination > div").css({
+        //     'font-size' : '10px',
+        //     'display': 'grid',
+        //     'grid-gap' : '36px',
+        //     'grid-template-columns' : 'repeat(auto-fill, minmax(270px, 1fr))',
+        //     'list-style' : 'none'
+        //   });
+        //   $(".scrolling-pagination > .jscroll-added").css({
+        //     'font-size' : '10px',
+        //     'display': 'grid',
+        //     'grid-gap' : '36px',
+        //     'grid-template-columns' : 'repeat(auto-fill, minmax(270px, 1fr))',
+        //     'list-style' : 'none'
+        //   });
+        // }, 1);
+
+
+
       });
     </script>
   </body>

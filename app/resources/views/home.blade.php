@@ -149,10 +149,25 @@ a:link, a:visited {
 @if ( !$posts->count() )
 There is no post till now. Login and write a new post now!!!
 @else
-<!-- <div class="scrolling-pagination"> -->
-<ol class="   scrolling-pagination   js-thumbnail-grid shots-grid group dribbbles container-fluid">
+<div class="scrolling-pagination">
+<!-- <ol class="   scrolling-pagination   js-thumbnail-grid shots-grid group dribbbles container-fluid"> -->
 
   <style>
+    /* .scrolling-pagination >> div {
+      {
+          display: grid;
+          grid-gap: 36px;
+          grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+          list-style: none;
+
+          position: relative;
+
+    }
+    @media screen and (min-width: 1600px) {
+      .scrolling-pagination >> div {
+          grid-template-columns: repeat(auto-fill, minmax(336px, 1fr));
+      }
+    } */
     .card {
       border: 1px solid #f3f3f3;
       background-color: #ffffff;
@@ -170,11 +185,11 @@ There is no post till now. Login and write a new post now!!!
 
 
 
-  <li id="screenshot-17216429" data-thumbnail-id="17216429" class="shot-thumbnail js-thumbnail shot-thumbnail-container      " data-ad-data="" data-boost-id="" data-is-boost-fallback="">
+  <!-- <li id="screenshot-17216429" data-thumbnail-id="17216429" class="shot-thumbnail js-thumbnail shot-thumbnail-container      " data-ad-data="" data-boost-id="" data-is-boost-fallback=""> -->
 
-  <div class="blogbox" data-aos="fade-up" data-aos-duration="200">
+  <div class="col-lg-3 col-md-4 col-sm-6 blogbox" data-aos="fade-up" data-aos-duration="200">
   <!-- col-md-4  -->
-    <div class="card shadow-sm card-body flex-fill" style="position: relative;">
+    <div class="card mb-3 shadow-sm card-body flex-fill" style="position: relative;">
     <!-- mb-4  -->
       <a href="{{ url('/'.$post->slug) }}">
       <div class="image" id="{{ 'imageWrapper'.$post->id }}" style="
@@ -241,7 +256,7 @@ There is no post till now. Login and write a new post now!!!
 
       @if(!Request::is('user/*'))
       <div class="card-body">
-        <h3 class="card-title" style="font-size: 2rem;">{!! Str::limit($post->title, $limit = 28, $end = '...') !!}</h3>
+        <h3 class="card-title" style="font-size: 1.75rem;">{!! Str::limit($post->title, $limit = 20, $end = '...') !!}</h3>
         <!-- <h3 class="card-title">{{ $post->title }}</h3> -->
         <!-- <p class="card-text">{!! Str::limit($post->body, $limit = 1500, $end = '....... <a href='.url("/".$post->slug).'>Read More</a>') !!}</p> -->
         <div class="d-flex justify-content-between align-items-center" style="margin: 12px 0 0; width: 100%; display: flex; justify-content: space-between; align-items: center;">
@@ -268,14 +283,14 @@ There is no post till now. Login and write a new post now!!!
     </div>
   </div>
 
-  </li>
+  <!-- </li> -->
 
 
   @endforeach
   {{ $posts->links() }}
   {!! $posts->render() !!}
-</ol>
-<!-- </div> -->
+<!-- </ol> -->
+</div>
 
 @endif
 @endif
