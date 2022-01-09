@@ -13,7 +13,8 @@
     <button class="tablinks" onclick="location.href='{{ url('/posts/category/7') }}'" value="Development">Development</button>
   </div>
 </div>
-<!-- {{ $title ?? '' }} -->
+@else
+{{ $title ?? '' }}
 @endif
 @endsection
 @section('content')
@@ -57,6 +58,7 @@ There is no post till now. Login and write a new post now!!!
       </div>
       </a>
 
+      @if(!Request::is('user/*'))
       <div class="card-body">
         <h3 class="card-title">{!! Str::limit($post->title, $limit = 24, $end = '...') !!}</h3>
         <!-- <h3 class="card-title">{{ $post->title }}</h3> -->
@@ -80,6 +82,8 @@ There is no post till now. Login and write a new post now!!!
           @endif
         @endif
       </div>
+      @endif
+
     </div>
   </div>
 
