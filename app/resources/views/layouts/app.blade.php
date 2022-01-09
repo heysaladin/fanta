@@ -63,6 +63,7 @@
     </nav>
 
     <main role="main" class="container">
+
       @if (Session::has('message'))
       <div class="flash alert-info">
         <p class="panel-body">
@@ -70,6 +71,7 @@
         </p>
       </div>
       @endif
+      
       @if ($errors->any())
       <div class='flash alert-danger'>
         <ul class="panel-body">
@@ -82,22 +84,96 @@
       </div>
       @endif
 
-          <div class="row">
-            <div class="panel-heading">
-              <h2>@yield('title')</h2>
-              @yield('title-meta')
-            </div>
-          </div>
-          <div class="row">
-            <div class="panel-body">
-              @yield('content')
-            </div>
-          </div>
-
+      {{-- <div class="row">
+        <div class="panel-heading">
+          <h2>@yield('title')</h2>
+          @yield('title-meta')
+        </div>
+      </div>
       <div class="row">
-          <p>Copyright © 2022 | <a href="https://www.hyperfantasy.co">Hyperfantasy</a></p>
+        <div class="panel-body">
+          @yield('content')
+        </div>
+      </div> --}}
+
+    </main>
+
+
+
+
+    <div id="wrap">
+      <div class="filter-subnav container-fluid">
+        <h2>@yield('title')</h2>
+        @yield('title-meta')
+      </div>
+      <div id="wrap-inner" class="flushed">
+        <div id="content" role="main">
+          <div id="main" class="main-full">
+          @yield('content')
+          </div>
+        </div>
       </div>
     </div>
+
+    <style>
+      #wrap {
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        background: #fff;
+      }
+      .container-fluid {
+    padding-right: 32px;
+    padding-left: 32px;
+}
+        #wrap-inner {
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          width: 100%;
+          padding: 32px 32px 40px;
+              padding-right: 32px;
+              padding-left: 32px;
+      }
+        #wrap-inner.flushed {
+          padding-right: 0;
+          padding-left: 0;
+      }
+        #content {
+          position: relative;
+          margin: 0 auto;
+          padding: 0;
+          font-size: 14px;
+      }
+        #main.main-full {
+          width: auto;
+          max-width: none;
+          float: none;
+      }
+      .shots-grid {
+          display: grid;
+          grid-gap: 36px;
+          grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+          list-style: none;
+
+          position: relative;
+
+      }
+      @media screen and (min-width: 1600px) {
+      .shots-grid {
+          grid-template-columns: repeat(auto-fill, minmax(336px, 1fr));
+      }
+      }
+        .shot-thumbnail-container {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+      }
+    </style>
+
+
+    <div class="row">
+        <p>Copyright © 2022 | <a href="https://www.hyperfantasy.co">Hyperfantasy</a></p>
+    </div>
+
+
     <!-- Scripts -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
