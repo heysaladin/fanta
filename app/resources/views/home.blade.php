@@ -41,7 +41,7 @@ There is no post till now. Login and write a new post now!!!
   @foreach( $posts as $post )
 
   <div class="col-md-4 blogbox" data-aos="fade-up" data-aos-duration="200">
-    <div class="card mb-4 shadow-sm card-body flex-fill">
+    <div class="card mb-4 shadow-sm card-body flex-fill" style="position: relative;">
       <a href="{{ url('/'.$post->slug) }}">
       <div class="image" id="{{ 'imageWrapper'.$post->id }}" style="
       position:relative;
@@ -57,6 +57,53 @@ There is no post till now. Login and write a new post now!!!
         width: auto;">
       </div>
       </a>
+      
+      @if($post->open == '0')
+      <div class="overlay" style="
+      display: flex; 
+      align-items: center; 
+      justify-content: flex-end;
+      padding: 12px 18px;
+      margin-top: -54px;
+      position: absolute;
+      left: 0;
+      ">
+        <span style="
+        display: block; 
+        flex: auto;
+        color: white;
+        background: rgba(0,0,0,0.5); 
+        padding: 4px 12px; 
+        border-radius: 100px;
+        font-size: 1.25rem;
+        ">Private</span>
+      </div>
+      @endif
+
+      @if(!Auth::guest() && ($post->author_id == Auth::user()->id || Auth::user()->is_admin()))
+        <div class="overlay" style="
+        display: flex; 
+        align-items: center; 
+        justify-content: flex-end;
+        padding: 12px 18px;
+        margin-top: -58px;
+        position: absolute;
+        right: 0;
+        ">
+          <a href="{{ url('edit/'.$post->slug)}}" class="icon" title="User Profile" style="
+          background: white; 
+          width: 32px; 
+          height: 32px; 
+          padding: 12px 6px 10px 8px; 
+          border-radius: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          ">
+            <i class="fa fa-edit"></i>
+          </a>
+        </div>
+      @endif
 
       @if(!Request::is('user/*'))
       <div class="card-body">
@@ -73,14 +120,14 @@ There is no post till now. Login and write a new post now!!!
           </span>
           <a href="{{ url('/posts/category/'.$post->category_id) }}" class="blog-categories">{{ $post->category->name }}</a>
         </div>
-        @if(!Auth::guest() && ($post->author_id == Auth::user()->id || Auth::user()->is_admin()))
+        <!-- @if(!Auth::guest() && ($post->author_id == Auth::user()->id || Auth::user()->is_admin()))
           @if($post->active == '1')
           <button style="margin: 12px 0 0;" class="btn" style="float: none"><a href="{{ url('edit/'.$post->slug)}}">Edit Post</a></button>
           @else
           <br/>
           <button style="margin: 12px 0 0;" class="btn" style="float: none"><a href="{{ url('edit/'.$post->slug)}}">Edit Draft</a></button>
           @endif
-        @endif
+        @endif -->
       </div>
       @endif
 

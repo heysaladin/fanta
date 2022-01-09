@@ -107,8 +107,8 @@ class PostController extends Controller
       $title = $request->input('title');
       $image = $request->input('image');
 
-      $open = 1;
-      $is_real_project = 1;
+      $open = $request->input('open');
+      $is_real_project = $request->input('is_real_project');
       $category_id = $request->get('category_id');
       
       $real_date = $request->get('real_date');
