@@ -16,79 +16,43 @@
 
 
 <div class="filter-subnav container-fluid">
-  <div class="filter-subnav-inner flex flex-row items-center justify-between">
-    <div class="filter-views js-shot-views">
-      <span class="btn-dropdown btn-dropdown-neue">
-        <a class="form-btn outlined btn-dropdown-link" data-track-sub-nav="" href="#" data-dropdown-state="closed">
-          
-
-          <span>Following</span>
-        </a>
-        <div class="btn-dropdown-options">
-          <ul>
-              <li class="active">
-                <a data-track-view="Following" href="/">Following</a>
-              </li>
-            <li class="popular " id="popular-btn">
-              <a data-track-view="Popular" href="/shots/popular">Popular</a>
-            </li>
-            <li class="" id="recent-btn">
-              <a data-track-view="New &amp; Noteworthy" href="/shots/recent">New &amp; Noteworthy</a>
-            </li>
-            <li class="rule"></li>
-
-            <li class="">
-              <a data-track-view="Goods for Sale" href="/shots/goods">Goods for Sale</a>
-            </li>
-          </ul>
-        </div>
-      </span>
-    </div>
+  <div class="filter-subnav-inner flex flex-row items-center justify-between" style="display: flex; justify-content: center; align-items: center;">
 
       <div class="filter-categories js-filter-categories js-shot-categories">
-        <span class="scroll scroll-backward"><a class="d-none" href="#">
-</a></span>
-        <span class="scroll scroll-forward"><a class="" href="#">
-</a></span>
-        <ul>
-            <li class="category sets-path active">
-              <a title="All" data-param="category" data-track-sub-nav="true" href="/shots/following/">All</a>
+        <span class="scroll scroll-backward"><a class="d-none" href="#"></a></span>
+        <span class="scroll scroll-forward"><a class="" href="#"></a></span>
+        <ul id="navCategory">
+            <li class="category sets-path {{ Request::is('/') ? 'active' : '' }}">
+              <a title="All" data-param="category" data-track-sub-nav="true" href="{{ url('/') }}">All</a>
             </li>
-            <li class="category sets-path ">
-              <a title="Animation" data-param="category" data-value="animation" data-track-sub-nav="true" href="/shots/following/animation">Animation</a>
+            <li class="category sets-path {{ Request::is('posts/category/1') ? 'active' : '' }}">
+              <a title="UI Design" data-param="category" data-value="ui-design" data-track-sub-nav="true" href="{{ url('/posts/category/1') }}">UI Design</a>
             </li>
-            <li class="category sets-path ">
-              <a title="Branding" data-param="category" data-value="branding" data-track-sub-nav="true" href="/shots/following/branding">Branding</a>
+            <li class="category sets-path {{ Request::is('posts/category/2') ? 'active' : '' }}">
+              <a title="UX Design" data-param="category" data-value="ux-design" data-track-sub-nav="true" href="{{ url('/posts/category/2') }}">UX Design</a>
             </li>
-            <li class="category sets-path ">
-              <a title="Illustration" data-param="category" data-value="illustration" data-track-sub-nav="true" href="/shots/following/illustration">Illustration</a>
+            <li class="category sets-path {{ Request::is('posts/category/3') ? 'active' : '' }}">
+              <a title="Illustration" data-param="category" data-value="illustration" data-track-sub-nav="true" href="{{ url('/posts/category/3') }}">Illustration</a>
             </li>
-            <li class="category sets-path ">
-              <a title="Mobile" data-param="category" data-value="mobile" data-track-sub-nav="true" href="/shots/following/mobile">Mobile</a>
+            <li class="category sets-path {{ Request::is('posts/category/4') ? 'active' : '' }}">
+              <a title="3D" data-param="category" data-value="3d" data-track-sub-nav="true" href="{{ url('/posts/category/4') }}">3D</a>
             </li>
-            <li class="category sets-path ">
-              <a title="Print" data-param="category" data-value="print" data-track-sub-nav="true" href="/shots/following/print">Print</a>
+            <li class="category sets-path {{ Request::is('posts/category/5') ? 'active' : '' }}">
+              <a title="Graphic Design" data-param="category" data-value="graphic-design" data-track-sub-nav="true" href="{{ url('/posts/category/5') }}">Graphic Design</a>
             </li>
-            <li class="category sets-path ">
-              <a title="Product Design" data-param="category" data-value="product-design" data-track-sub-nav="true" href="/shots/following/product-design">Product Design</a>
+            <li class="category sets-path {{ Request::is('posts/category/6') ? 'active' : '' }}">
+              <a title="Branding" data-param="category" data-value="Branding" data-track-sub-nav="true" href="{{ url('/posts/category/6') }}">Branding</a>
             </li>
-            <li class="category sets-path ">
-              <a title="Typography" data-param="category" data-value="typography" data-track-sub-nav="true" href="/shots/following/typography">Typography</a>
-            </li>
-            <li class="category sets-path ">
-              <a title="Web Design" data-param="category" data-value="web-design" data-track-sub-nav="true" href="/shots/following/web-design">Web Design</a>
+            <li class="category sets-path {{ Request::is('posts/category/7') ? 'active' : '' }}">
+              <a title="Development" data-param="category" data-value="development" data-track-sub-nav="true" href="{{ url('/posts/category/7') }}">Development</a>
             </li>
         </ul>
       </div>
 
-    <div class="filter-settings js-shot-settings">
-      <a class="form-btn outlined filters-toggle-btn empty" data-name="Filters" data-track-sub-nav="true" href="#" data-dropdown-state="closed">
-        <span class="meatball">0</span>
-        <span class="label" title="Filters">Filters</span>
-</a>    </div>
   </div>
 
 </div>
+
 
 <style>
   .filter-categories {
@@ -153,21 +117,6 @@ There is no post till now. Login and write a new post now!!!
 <!-- <ol class="   scrolling-pagination   js-thumbnail-grid shots-grid group dribbbles container-fluid"> -->
 
   <style>
-    /* .scrolling-pagination >> div {
-      {
-          display: grid;
-          grid-gap: 36px;
-          grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-          list-style: none;
-
-          position: relative;
-
-    }
-    @media screen and (min-width: 1600px) {
-      .scrolling-pagination >> div {
-          grid-template-columns: repeat(auto-fill, minmax(336px, 1fr));
-      }
-    } */
     .card {
       border: 1px solid #f3f3f3;
       background-color: #ffffff;
@@ -181,9 +130,9 @@ There is no post till now. Login and write a new post now!!!
     }
   </style>
 
+  <!-- <h1>{{ Request::get('a') }}</h1> -->
+
   @foreach( $posts as $post )
-
-
 
   <!-- <li id="screenshot-17216429" data-thumbnail-id="17216429" class="shot-thumbnail js-thumbnail shot-thumbnail-container      " data-ad-data="" data-boost-id="" data-is-boost-fallback=""> -->
 
@@ -284,7 +233,6 @@ There is no post till now. Login and write a new post now!!!
   </div>
 
   <!-- </li> -->
-
 
   @endforeach
   {{ $posts->links() }}
