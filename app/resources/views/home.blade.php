@@ -16,7 +16,7 @@
 
 
 <div class="filter-subnav container-fluid">
-  <div class="filter-subnav-inner flex flex-row items-center justify-between" style="display: flex; justify-content: center; align-items: center;">
+  <div class="filter-subnav-inner flex flex-row items-center justify-between" style="display: flex; justify-content: space-between; align-items: center;">
 
       <select id="base_filter" onchange="window.location.href=this.options[this.selectedIndex].value;">
         <option value="{{ url('/') }}">All Portfolios</option>
@@ -46,6 +46,55 @@
           lastWord = '';
         }
       </script>
+      <style>
+        #base_filter{
+          font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          -webkit-transition: color 200ms ease;
+          transition: color 200ms ease;
+          color: #6e6d7a;
+
+          background-color: transparent;
+          -webkit-box-shadow: 0px 0px 0px 1px #e7e7e9 inset;
+          box-shadow: 0px 0px 0px 1px #e7e7e9 inset;
+          color: #0d0c22;
+
+          min-width: 115px;
+          white-space: nowrap;
+
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          padding-right: 35px;
+          text-ali
+
+          display: inline-block;
+          position: relative;
+          -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+          height: 40px;
+          padding: 10px 16px;
+          -webkit-transition: color 200ms ease;
+          transition: color 200ms ease;
+          border: none;
+          border-radius: 8px;
+          outline: none;
+          /* background: #ea4c89; */
+          text-align: center;
+          text-decoration: none;
+          cursor: pointer;
+          /* -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none; */
+          font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 20px;
+
+          margin: -10px 0 0 0;
+        }
+      </style>
 
       <div class="filter-categories js-filter-categories js-shot-categories">
         <span class="scroll scroll-backward"><a class="d-none" href="#"></a></span>
