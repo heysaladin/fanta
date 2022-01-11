@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\PostController@index');
 Route::get('/home', ['as' => 'home', 'uses' => 'App\Http\Controllers\PostController@index']);
 
+Route::get('curated', 'App\Http\Controllers\PostController@curated');
+Route::get('exploration', 'App\Http\Controllers\PostController@exploration');
+Route::get('real-project', 'App\Http\Controllers\PostController@real_project');
+
 Route::get('/posts/category/{id}', 'App\Http\Controllers\PostController@category');
 
 Route::get('categories', 'App\Http\Controllers\CategoryController@index');

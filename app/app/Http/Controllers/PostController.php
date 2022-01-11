@@ -186,6 +186,31 @@ class PostController extends Controller
     return view('home')->withPosts($posts)->withTitle($title);
   }
 
+  public function curated()
+  {
+      $posts = Posts::where('open',99)->orderBy('real_date','desc')->paginate(12);
+      //page heading
+      $title = 'Curated';
+      //return home.blade.php template from resources/views folder
+      return view('home')->withPosts($posts)->withTitle($title);
+  }
+  public function exploration()
+  {
+      $posts = Posts::where('is_real_project',0)->orderBy('real_date','desc')->paginate(12);
+      //page heading
+      $title = 'Exploration';
+      //return home.blade.php template from resources/views folder
+      return view('home')->withPosts($posts)->withTitle($title);
+  }
+  public function real_project()
+  {
+      $posts = Posts::where('is_real_project',1)->orderBy('real_date','desc')->paginate(12);
+      //page heading
+      $title = 'Real Project';
+      //return home.blade.php template from resources/views folder
+      return view('home')->withPosts($posts)->withTitle($title);
+  }
+
 
 
 }

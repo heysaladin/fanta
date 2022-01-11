@@ -18,6 +18,13 @@
 <div class="filter-subnav container-fluid">
   <div class="filter-subnav-inner flex flex-row items-center justify-between" style="display: flex; justify-content: center; align-items: center;">
 
+      <select onchange="window.location.href=this.options[this.selectedIndex].value;">
+        <option value="{{ url('/') }}">All Portfolios</option>
+        <option value="{{ url('curated') }}">Curated</option>
+        <option value="{{ url('exploration') }}">Exploration</option>
+        <option value="{{ url('real-project') }}">Real Project</option>
+      </select>
+
       <div class="filter-categories js-filter-categories js-shot-categories">
         <span class="scroll scroll-backward"><a class="d-none" href="#"></a></span>
         <span class="scroll scroll-forward"><a class="" href="#"></a></span>
