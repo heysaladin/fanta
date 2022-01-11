@@ -188,7 +188,7 @@ class PostController extends Controller
 
   public function curated()
   {
-      $posts = Posts::where('open',99)->orderBy('real_date','desc')->paginate(12);
+      $posts = Posts::where('open',8)->orderBy('real_date','desc')->paginate(12);
       //page heading
       $title = 'Curated';
       //return home.blade.php template from resources/views folder
