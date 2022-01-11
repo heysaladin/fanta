@@ -211,6 +211,30 @@ class PostController extends Controller
       return view('home')->withPosts($posts)->withTitle($title);
   }
 
+  public function category_curated(Request $request, $id)
+  {
+    $posts = Posts::where('category_id',$id)->where('open',99)->where('active',1)->orderBy('real_date','desc')->paginate(12);
+    //page heading
+    $title = 'Posts by category';
+    //return home.blade.php template from resources/views folder
+    return view('home')->withPosts($posts)->withTitle($title);
+  }
+  public function category_exploration(Request $request, $id)
+  {
+    $posts = Posts::where('category_id',$id)->where('is_real_project',0)->where('active',1)->orderBy('real_date','desc')->paginate(12);
+    //page heading
+    $title = 'Posts by category';
+    //return home.blade.php template from resources/views folder
+    return view('home')->withPosts($posts)->withTitle($title);
+  }
+  public function category_real_project(Request $request, $id)
+  {
+    $posts = Posts::where('category_id',$id)->where('is_real_project',1)->where('active',1)->orderBy('real_date','desc')->paginate(12);
+    //page heading
+    $title = 'Posts by category';
+    //return home.blade.php template from resources/views folder
+    return view('home')->withPosts($posts)->withTitle($title);
+  }
 
 
 }

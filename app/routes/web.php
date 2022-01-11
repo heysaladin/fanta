@@ -22,6 +22,10 @@ Route::get('real-project', 'App\Http\Controllers\PostController@real_project');
 
 Route::get('/posts/category/{id}', 'App\Http\Controllers\PostController@category');
 
+Route::get('/posts/category/{id}/curated', 'App\Http\Controllers\PostController@category_curated');
+Route::get('/posts/category/{id}/exploration', 'App\Http\Controllers\PostController@category_exploration');
+Route::get('/posts/category/{id}/real-project', 'App\Http\Controllers\PostController@category_real_project');
+
 Route::get('categories', 'App\Http\Controllers\CategoryController@index');
 // add categories
 Route::post('categories/add', 'App\Http\Controllers\CategoryController@store');

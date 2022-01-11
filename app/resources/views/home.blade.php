@@ -18,40 +18,62 @@
 <div class="filter-subnav container-fluid">
   <div class="filter-subnav-inner flex flex-row items-center justify-between" style="display: flex; justify-content: center; align-items: center;">
 
-      <select onchange="window.location.href=this.options[this.selectedIndex].value;">
+      <select id="base_filter" onchange="window.location.href=this.options[this.selectedIndex].value;">
         <option value="{{ url('/') }}">All Portfolios</option>
         <option value="{{ url('curated') }}">Curated</option>
         <option value="{{ url('exploration') }}">Exploration</option>
         <option value="{{ url('real-project') }}">Real Project</option>
       </select>
+      <script>
+        var currentUrl = window.location.href;
+        var lastWord = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
+        var baseFilter = document.getElementById('base_filter');
+        if(lastWord != '') {
+          if(lastWord == 'curated') {
+            var activeFilter = "http://app.hyperfantasy.local"+"/curated";
+            baseFilter.value = activeFilter;
+          } else if(lastWord == 'exploration') {
+            var activeFilter = "http://app.hyperfantasy.local"+"/exploration";
+            baseFilter.value = activeFilter;
+          } else if(lastWord == 'real-project') {
+            var activeFilter = "http://app.hyperfantasy.local"+"/real-project";
+            baseFilter.value = activeFilter;
+          }else if(lastWord != 'curated' || lastWord != 'exploration' || lastWord != 'real-project') {
+            lastWord = '';
+          }
+        } else {
+          baseFilter.value = "http://app.hyperfantasy.local";
+          lastWord = '';
+        }
+      </script>
 
       <div class="filter-categories js-filter-categories js-shot-categories">
         <span class="scroll scroll-backward"><a class="d-none" href="#"></a></span>
         <span class="scroll scroll-forward"><a class="" href="#"></a></span>
         <ul id="navCategory">
-            <li class="category sets-path {{ Request::is('/') ? 'active' : '' }}">
-              <a title="All" data-param="category" data-track-sub-nav="true" href="{{ url('/') }}">All</a>
+            <li class="category sets-path {{ Request::is('/') || Request::is('curated') || Request::is('exploration') || Request::is('real-project') ? 'active' : '' }}">
+              <a title="All" data-param="category" data-track-sub-nav="true" href="javascript:window.location.href = '/'+lastWord;">All</a>
             </li>
-            <li class="category sets-path {{ Request::is('posts/category/1') ? 'active' : '' }}">
-              <a title="UI Design" data-param="category" data-value="ui-design" data-track-sub-nav="true" href="{{ url('/posts/category/1') }}">UI Design</a>
+            <li class="category sets-path {{ Request::is('posts/category/1*') ? 'active' : '' }}">
+              <a title="UI Design" data-param="category" data-value="ui-design" data-track-sub-nav="true" href="javascript:window.location.href = '/posts/category/1/'+lastWord;">UI Design</a>
             </li>
-            <li class="category sets-path {{ Request::is('posts/category/2') ? 'active' : '' }}">
-              <a title="UX Design" data-param="category" data-value="ux-design" data-track-sub-nav="true" href="{{ url('/posts/category/2') }}">UX Design</a>
+            <li class="category sets-path {{ Request::is('posts/category/2*') ? 'active' : '' }}">
+              <a title="UX Design" data-param="category" data-value="ux-design" data-track-sub-nav="true" href="javascript:window.location.href = '/posts/category/2/'+lastWord;">UX Design</a>
             </li>
-            <li class="category sets-path {{ Request::is('posts/category/3') ? 'active' : '' }}">
-              <a title="Illustration" data-param="category" data-value="illustration" data-track-sub-nav="true" href="{{ url('/posts/category/3') }}">Illustration</a>
+            <li class="category sets-path {{ Request::is('posts/category/3*') ? 'active' : '' }}">
+              <a title="Illustration" data-param="category" data-value="illustration" data-track-sub-nav="true" href="javascript:window.location.href = '/posts/category/3/'+lastWord;">Illustration</a>
             </li>
-            <li class="category sets-path {{ Request::is('posts/category/4') ? 'active' : '' }}">
-              <a title="3D" data-param="category" data-value="3d" data-track-sub-nav="true" href="{{ url('/posts/category/4') }}">3D</a>
+            <li class="category sets-path {{ Request::is('posts/category/4*') ? 'active' : '' }}">
+              <a title="3D" data-param="category" data-value="3d" data-track-sub-nav="true" href="javascript:window.location.href = '/posts/category/4/'+lastWord;">3D</a>
             </li>
-            <li class="category sets-path {{ Request::is('posts/category/5') ? 'active' : '' }}">
-              <a title="Graphic Design" data-param="category" data-value="graphic-design" data-track-sub-nav="true" href="{{ url('/posts/category/5') }}">Graphic Design</a>
+            <li class="category sets-path {{ Request::is('posts/category/5*') ? 'active' : '' }}">
+              <a title="Graphic Design" data-param="category" data-value="graphic-design" data-track-sub-nav="true" href="javascript:window.location.href = '/posts/category/5/'+lastWord;">Graphic Design</a>
             </li>
-            <li class="category sets-path {{ Request::is('posts/category/6') ? 'active' : '' }}">
-              <a title="Branding" data-param="category" data-value="Branding" data-track-sub-nav="true" href="{{ url('/posts/category/6') }}">Branding</a>
+            <li class="category sets-path {{ Request::is('posts/category/6*') ? 'active' : '' }}">
+              <a title="Branding" data-param="category" data-value="Branding" data-track-sub-nav="true" href="javascript:window.location.href = '/posts/category/6/'+lastWord;">Branding</a>
             </li>
-            <li class="category sets-path {{ Request::is('posts/category/7') ? 'active' : '' }}">
-              <a title="Development" data-param="category" data-value="development" data-track-sub-nav="true" href="{{ url('/posts/category/7') }}">Development</a>
+            <li class="category sets-path {{ Request::is('posts/category/7*') ? 'active' : '' }}">
+              <a title="Development" data-param="category" data-value="development" data-track-sub-nav="true" href="javascript:window.location.href = '/posts/category/7/'+lastWord;">Development</a>
             </li>
         </ul>
       </div>
@@ -141,6 +163,8 @@ There is no post till now. Login and write a new post now!!!
 
   @foreach( $posts as $post )
 
+  {{-- @if($post->category_id == Request::get('category') ) --}}
+
   <!-- <li id="screenshot-17216429" data-thumbnail-id="17216429" class="shot-thumbnail js-thumbnail shot-thumbnail-container      " data-ad-data="" data-boost-id="" data-is-boost-fallback=""> -->
 
   <div class="col-lg-3 col-md-4 col-sm-6 blogbox" data-aos="fade-up" data-aos-duration="200">
@@ -216,13 +240,16 @@ There is no post till now. Login and write a new post now!!!
         <!-- <h3 class="card-title">{{ $post->title }}</h3> -->
         <!-- <p class="card-text">{!! Str::limit($post->body, $limit = 1500, $end = '....... <a href='.url("/".$post->slug).'>Read More</a>') !!}</p> -->
         <div class="d-flex justify-content-between align-items-center" style="margin: 12px 0 0; width: 100%; display: flex; justify-content: space-between; align-items: center;">
-          <span class="text-muted" style="font-weight: bold;">
-            <!-- {{ $post->created_at->format('M d,Y \a\t h:i a') }} By  -->
-            <a href="{{ url('/user/'.$post->author_id)}}">{{ $post->author->name }}</a>
-            @if($post->support_author_id != NULL)
-            x <a href="{{ url('/user/'.$post->support_author_id)}}">{{ $post->support_author->name }}</a>
-            @endif
+          @if (Auth::guest())
+          @else
+            <span class="text-muted" style="font-weight: bold;">
+              <!-- {{ $post->created_at->format('M d,Y \a\t h:i a') }} By  -->
+              <a href="{{ url('/user/'.$post->author_id)}}">{{ $post->author->name }}</a>
+              @if($post->support_author_id != NULL)
+              x <a href="{{ url('/user/'.$post->support_author_id)}}">{{ $post->support_author->name }}</a>
+              @endif
           </span>
+          @endif
           <a href="{{ url('/posts/category/'.$post->category_id) }}" class="blog-categories">{{ $post->category->name }}</a>
         </div>
         <!-- @if(!Auth::guest() && ($post->author_id == Auth::user()->id || Auth::user()->is_admin()))
@@ -240,6 +267,8 @@ There is no post till now. Login and write a new post now!!!
   </div>
 
   <!-- </li> -->
+
+  {{-- @endif --}}
 
   @endforeach
   {{ $posts->links() }}
