@@ -13,16 +13,7 @@
 </head>
 
 <body>
-  <div style="
-    height: 98vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Avenir Next LT Pro Regular', Arial, Helvetica, sans-serif;
-    text-align: center;
-    margin-top: 24px;
-    ">
+  <div class="container">
     <img src="./assets/styles/images/logo_mark_hyperfantasy.png" alt="Image Content - Logo -  HyperFantasy" />
     <h1>
       We are building.
@@ -37,8 +28,8 @@
       <a class="cta" href="mailto:hello.hyperfantasy@gmail.com">Send us an email!</a>
     </div>
     <div class="section section-flex">
-      <a class="icon-link" href="https://dribbble.com/hyperfantasy"><span class="icon" id="icon-dribbble"></span>hyperfantasy</a>
-      <a class="icon-link" href="https://www.instagram.com/hyperfantasy.creative"><span class="icon" id="icon-instagram"></span>hyperfantasy.creative</a>
+      <a class="icon-link" href="https://dribbble.com/hyperfantasy"><span class="icon" id="icon-dribbble"></span><span class="icon-text">hyperfantasy</span></a>
+      <a class="icon-link" href="https://www.instagram.com/hyperfantasy.creative"><span class="icon" id="icon-instagram"></span><span class="icon-text">hyperfantasy.creative</span></a>
     </div>
 
   <footer>
@@ -78,6 +69,16 @@
     p {
       font-size: 16px;
     }
+    .container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Avenir Next LT Pro Regular', Arial, Helvetica, sans-serif;
+      text-align: center;
+      margin-top: 24px;
+    }
     .light-blue {
       color: rgba(255, 255, 255, 0.5);
     }
@@ -113,6 +114,9 @@
       justify-content: center;
       align-items: center;
     }
+    .icon-text {
+      display: inline-block;
+    }
     .section .icon {
       width: 24px;
       height: 24px;
@@ -127,7 +131,7 @@
     }
     footer {
       width: 100%;
-      margin: 64px auto 16px;
+      margin: 64px auto 32px;
       /* height: 32px;
       position: fixed;
       bottom: 0; */
@@ -137,6 +141,22 @@
       text-align: center;
       margin: 0 auto;
       font-size: 14px;
+    }
+    @media only screen and (max-width: 640px) {
+      .container {
+        height: 97.25vh;
+      }
+      .icon-text {
+        display: none;
+      }
+      .section-flex {
+        width: 100px;
+      }
+    }
+    @media only screen and (max-width: 375px) {
+      .container {
+        height: 100%;
+      }
     }
   </style>
 
