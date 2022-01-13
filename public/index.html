@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hyperfantasy</title>
+  <title>hyperfantasy</title>
   <meta name="robots" content="index, follow">
   <meta name="og:title" property="og:title" content="Hyperfantasy Design Studio">
   <meta name="description" content="Hyperfantasy Design Studio">
@@ -14,19 +14,40 @@
 
 <body>
   <div style="
-    height: 96vh;
+    height: 98vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     font-family: 'Avenir Next LT Pro Regular', Arial, Helvetica, sans-serif;
     text-align: center;
+    margin-top: 24px;
     ">
-    <img src="./assets/styles/images/logo-hyperfantasy-dark.png" alt="Image Content - Logo -  HyperFantasy" />
-    <p style="margin-top: 100px; font-size: 2em;">
-      Under Development
+    <img src="./assets/styles/images/logo_mark_hyperfantasy.png" alt="Image Content - Logo -  HyperFantasy" />
+    <h1>
+      We are building.
+    </h1>
+    <p class="light-blue">
+      Hyperfantasy will be launched soon.
     </p>
-  </div>
+    <div class="section">
+      <p style="font-size: 18px;">
+        Any idea in mind?
+      </p>
+      <a class="cta" href="mailto:hello.hyperfantasy@gmail.com">Send us an email!</a>
+    </div>
+    <div class="section section-flex">
+      <a class="icon-link" href="https://dribbble.com/heysaladin"><span class="icon" id="icon-dribbble"></span>hyperfantasy</a>
+      <a class="icon-link" href="https://www.instagram.com/hyperfantasy.creative"><span class="icon" id="icon-instagram"></span>hyperfantasy.creative</a>
+    </div>
+
+  <footer>
+    <span class="light-blue">
+      © 2022, Hyperfantasy. All rights reserved.
+    </span>
+  </footer>
+
+</div>
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="/__/firebase/8.9.1/firebase-app.js"></script>
@@ -37,6 +58,87 @@
 
   <!-- Initialize Firebase -->
   <script src="/__/firebase/init.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Avenir Next";
+      font-style: normal;
+      font-weight: normal;
+      color: white;
+      background: #060029 url('./assets/styles/images/bg-blur.png') no-repeat center center;
+      background-size: cover;
+    }
+    h1 {
+      font-weight: Medium;
+      margin: 32px auto 8px;
+      font-size: 58px;
+    }
+    p {
+      font-size: 16px;
+    }
+    .light-blue {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    .cta {
+      border: none;
+      font-weight: bold;
+      text-transform: auto;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(256.86deg, #0CF1D7 -37.8%, #114EF7 58.71%, #A91BFF 102.4%, #FC7541 123.84%);
+      padding: 14px 36px;
+      border-radius: 24px;
+      margin-top: 20px;
+      box-shadow: 0 11px 36px 0 rgb(70 89 138 / 25%);
+      font-weight: medium;
+      letter-spacing: auto;
+      display: block;
+    }
+    .section {
+      margin-top: 32px;
+    }
+    .section-flex {
+      margin-top: 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 370px;
+    }
+    .section .icon-link {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .section .icon {
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .section #icon-dribbble {
+      background-image: url('./assets/styles/images/icon-social-media-dribbble.png');
+    }
+    .section #icon-instagram {
+      background-image: url('./assets/styles/images/icon-social-media-instagram.png');
+    }
+    footer {
+      width: 100%;
+      margin: 64px auto 16px;
+      /* height: 32px;
+      position: fixed;
+      bottom: 0; */
+    }
+    footer span {
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+  </style>
 
 </body>
 
