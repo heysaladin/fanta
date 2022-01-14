@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <div id="container" class="container">
     <img id="main-logo" src="./assets/styles/images/logo_mark_hyperfantasy.png" alt="Image Content - Logo -  HyperFantasy" />
     <h1>
       We are building.
@@ -162,6 +162,15 @@
       }
     }
   </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) { 
+      //we ready baby
+      if(screen.height < 1000) {
+        document.getElementById('container').style.height  = 'auto';
+      }
+    });
+  </script>
 
 </body>
 
