@@ -17,8 +17,9 @@ class UserController extends Controller {
   {
     //
     $posts = Posts::where('support_author_id',$id)->where('active',1)->orderBy('real_date','desc')->paginate(5);
+    $user = User::find($id);
     $title = User::find($id)->name;
-    return view('home')->withPosts($posts)->withTitle($title);
+    return view('home')->withPosts($posts)->withUser($user)->withTitle($title);
   }
 
 
@@ -33,8 +34,9 @@ class UserController extends Controller {
   {
     //
     $posts = Posts::where('author_id',$id)->where('active',1)->orderBy('real_date','desc')->paginate(5);
+    $user = User::find($id);
     $title = User::find($id)->name;
-    return view('home')->withPosts($posts)->withTitle($title);
+    return view('home')->withPosts($posts)->withUser($user)->withTitle($title);
   }
   /*
    * Display all of the posts of a particular user
@@ -84,7 +86,7 @@ class UserController extends Controller {
     $data['posts_count'] = $data['user'] -> posts -> count();
     $data['posts_active_count'] = $data['user'] -> posts -> where('active', '1') -> count();
     $data['posts_draft_count'] = $data['posts_count'] - $data['posts_active_count'];
-    $data['latest_posts'] = $data['user'] -> posts -> where('active', '1') -> take(5);
+    $data['latest_posts'] = $data['user'] -> posts -> where('active', 1) -> take(5);
     $data['latest_comments'] = $data['user'] -> comments -> take(5);
     return view('admin.profile', $data);
   }

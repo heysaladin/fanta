@@ -181,10 +181,28 @@ a:link, a:visited {
 }
 </style>
 
-
 @else
-{{ $title ?? '' }}
+<div class="row" style="max-width: 50%; min-width: auto;">
+  <div class="col-lg-6 col-md-6 col-sm-6" style="max-width: 100px; min-width: auto;">
+    @if($user != NULL)
+      <img src="{{ $user->photo }}" width=64 height=64 style="border-radius: 50%;" />
+    @endif
+  </div>
+  <div class="col-lg-6 col-md-6 col-sm-6">
+    <div class="row">
+      {{ $title ?? '' }}
+    </div>
+    <div class="row">
+      @if($user != NULL)
+        <span style="font-size: 16px; color: gray;">
+          Joined on {{$user->created_at->format('M d,Y \a\t h:i a') }}
+        </span>
+      @endif
+    </div>
+  </div>
+</div>
 @endif
+
 @endsection
 @section('content')
 @if(isset($posts))
