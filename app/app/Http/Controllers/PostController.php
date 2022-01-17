@@ -43,8 +43,8 @@ class PostController extends Controller
     $post->image = $request->get('image');
     $post->body = $request->get('body');
 
-    $post->open = 1;
-    $post->is_real_project = 1;
+    $post->open = $request->get('open');
+    $post->is_real_project = $request->get('is_real_project');
     $post->category_id = $request->get('category_id');
 
     $post->support_author_id = $request->get('support_author_id');
