@@ -255,26 +255,35 @@ There is no post till now. Login and write a new post now!!!
       </a>
       
       @if($post->open == '0')
-      <div class="overlay" style="
-      display: flex; 
-      align-items: center; 
-      justify-content: flex-end;
-      padding: 12px 18px;
-      margin-top: -54px;
-      position: absolute;
-      left: 0;
-      ">
-        <span style="
-        display: block; 
-        flex: auto;
-        color: white;
-        background: rgba(0,0,0,0.5); 
-        padding: 4px 12px; 
-        border-radius: 100px;
-        font-size: 1.25rem;
-        ">Private</span>
-      </div>
+        <div class="overlay">
+          <span>Private</span>
+        </div>
+      @elseif($post->open == '7')
+        <div class="overlay">
+          <span>On progress</span>
+        </div>
       @endif
+
+      <style>
+        .overlay {
+          display: flex; 
+          align-items: center; 
+          justify-content: flex-end;
+          padding: 12px 18px;
+          margin-top: -54px;
+          position: absolute;
+          left: 0;
+        }
+        .overlay > span {
+          display: block; 
+          flex: auto;
+          color: white;
+          background: rgba(0,0,0,0.5); 
+          padding: 4px 12px; 
+          border-radius: 100px;
+          font-size: 1.25rem;
+        }
+      </style>
 
       @if(!Auth::guest() && ($post->author_id == Auth::user()->id || Auth::user()->is_admin()))
         <div class="overlay" style="
