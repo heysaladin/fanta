@@ -264,47 +264,9 @@ There is no post till now. Login and write a new post now!!!
         </div>
       @endif
 
-      <style>
-        .overlay {
-          display: flex; 
-          align-items: center; 
-          justify-content: flex-end;
-          padding: 12px 18px;
-          margin-top: -54px;
-          position: absolute;
-          left: 0;
-        }
-        .overlay > span {
-          display: block; 
-          flex: auto;
-          color: white;
-          background: rgba(0,0,0,0.5); 
-          padding: 4px 12px; 
-          border-radius: 100px;
-          font-size: 1.25rem;
-        }
-      </style>
-
       @if(!Auth::guest() && ($post->author_id == Auth::user()->id || Auth::user()->is_admin()))
-        <div class="overlay" style="
-        display: flex; 
-        align-items: center; 
-        justify-content: flex-end;
-        padding: 12px 18px;
-        margin-top: -58px;
-        position: absolute;
-        right: 0;
-        ">
-          <a href="{{ url('edit/'.$post->slug)}}" class="icon" title="User Profile" style="
-          background: white; 
-          width: 32px; 
-          height: 32px; 
-          padding: 12px 6px 10px 8px; 
-          border-radius: 100px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          ">
+        <div class="overlay" style="right: 0;">
+          <a href="{{ url('edit/'.$post->slug)}}" class="icon" title="User Profile">
             <i class="fa fa-edit"></i>
           </a>
         </div>
@@ -320,9 +282,9 @@ There is no post till now. Login and write a new post now!!!
           @else
             <span class="text-muted" style="font-weight: bold;">
               <!-- {{ $post->created_at->format('M d,Y \a\t h:i a') }} By  -->
-              <a href="{{ url('/user/'.$post->author_id)}}">{{ $post->author->name }}</a>
+              <a href="{{ url('/user/'.$post->author_id).'/posts'}}">{{ $post->author->name }}</a>
               @if($post->support_author_id != NULL)
-              x <a href="{{ url('/user/'.$post->support_author_id)}}">{{ $post->support_author->name }}</a>
+              x <a href="{{ url('/user/'.$post->support_author_id).'/posts'}}">{{ $post->support_author->name }}</a>
               @endif
           </span>
           @endif
@@ -349,6 +311,38 @@ There is no post till now. Login and write a new post now!!!
   @endforeach
   {{ $posts->links() }}
   {!! $posts->render() !!}
+
+  <style>
+    .overlay {
+      display: flex; 
+      align-items: center; 
+      justify-content: flex-end;
+      padding: 12px 18px;
+      margin-top: -54px;
+      position: absolute;
+      left: 0;
+    }
+    .overlay > span {
+      display: block; 
+      flex: auto;
+      color: white;
+      background: rgba(0,0,0,0.5); 
+      padding: 4px 12px; 
+      border-radius: 100px;
+      font-size: 1.25rem;
+    }
+    .overlay > a.icon {
+      background: white; 
+      width: 32px; 
+      height: 32px; 
+      padding: 12px 6px 10px 8px; 
+      border-radius: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+
 <!-- </ol> -->
 </div>
 
