@@ -182,25 +182,23 @@ a:link, a:visited {
 </style>
 
 @else
-<div class="row" style="max-width: 50%; min-width: auto;">
-  <div class="col-lg-6 col-md-6 col-sm-6" style="max-width: 100px; min-width: auto;">
     @if($user != NULL)
-      <img src="{{ $user->photo }}" width=64 height=64 style="border-radius: 50%;" />
+      <div class="row" style="max-width: 50%; min-width: auto;">
+        <div class="col-lg-6 col-md-6 col-sm-6" style="max-width: 100px; min-width: auto;">
+            <img src="{{ $user->photo }}" width=64 height=64 style="border-radius: 50%;" />
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="row">
+            <a href="{{ url('/user/'.$user->id)}}">{{ $title ?? '' }}</a>
+          </div>
+          <div class="row">
+              <span style="font-size: 16px; color: gray;">
+                Joined on {{$user->created_at->format('M d,Y \a\t h:i a') }}
+              </span>
+          </div>
+        </div>
+      </div>
     @endif
-  </div>
-  <div class="col-lg-6 col-md-6 col-sm-6">
-    <div class="row">
-      {{ $title ?? '' }}
-    </div>
-    <div class="row">
-      @if($user != NULL)
-        <span style="font-size: 16px; color: gray;">
-          Joined on {{$user->created_at->format('M d,Y \a\t h:i a') }}
-        </span>
-      @endif
-    </div>
-  </div>
-</div>
 @endif
 
 @endsection
@@ -284,7 +282,7 @@ There is no post till now. Login and write a new post now!!!
               <!-- {{ $post->created_at->format('M d,Y \a\t h:i a') }} By  -->
               <a href="{{ url('/user/'.$post->author_id).'/posts'}}">{{ $post->author->name }}</a>
               @if($post->support_author_id != NULL)
-              x <a href="{{ url('/user/'.$post->support_author_id).'/posts'}}">{{ $post->support_author->name }}</a>
+              x <a href="{{ url('/user/'.$post->support_author_id).'/posts/collaboration'}}">{{ $post->support_author->name }}</a>
               @endif
           </span>
           @endif
