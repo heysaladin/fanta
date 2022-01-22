@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="width: 400px;">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header"><h1>{{ __('Login') }}</h1></div>
+                <div class="card-header"><h1 style="text-align: center;">{{ __('Login') }}</h1></div>
                 <br/>
                 <br/>
 
@@ -13,10 +13,10 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
-                        <div class="row mb-3">
+                        <div class="row mb-12">
 
-                            <div class="col-md-6">
-                                <label for="email" class="col-md-12 col-form-label text-md-end">{{ __('E-Mail Address') }}</label>
+                            <div class="col-md-12">
+                                <label for="email" class="col-form-label text-md-end">{{ __('E-Mail Address') }}</label>
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
@@ -29,10 +29,10 @@
 
                         <br/>
 
-                        <div class="row mb-3">
+                        <div class="row mb-12">
 
-                            <div class="col-md-6">
-                                <label for="password" class="col-md-12 col-form-label text-md-end">{{ __('Password') }}</label>
+                            <div class="col-md-12">
+                                <label for="password" class="col-form-label text-md-end">{{ __('Password') }}</label>
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
@@ -43,9 +43,9 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
+                        <div class="row mb-12">
                             <br/>
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-12 offset-md-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
@@ -60,10 +60,13 @@
                         </div>
 
                         <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
+                            <div class="col-md-12 offset-md-0" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
+
+                                <br/>
+                                <br/>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
@@ -73,6 +76,8 @@
                             </div>
                         </div>
                     </form>
+                    <br/>
+                    <br/>
                 </div>
             </div>
         </div>

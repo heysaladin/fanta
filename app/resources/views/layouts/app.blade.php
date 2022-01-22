@@ -169,8 +169,8 @@
     </style> --}}
 
 
-    <div class="row">
-        <p>Copyright © 2022 | <a href="https://www.hyperfantasy.co">Hyperfantasy</a></p>
+    <div class="">
+        <p style="text-align: center;">Copyright © 2022 | <a href="https://www.hyperfantasy.co">Hyperfantasy</a></p>
     </div>
 
 
