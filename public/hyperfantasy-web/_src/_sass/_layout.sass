@@ -11,6 +11,10 @@ header
                     align-items: center
                     li
                         padding: 0 1rem
+            .col-md-6
+                display: flex
+                justify-content: center
+                align-items: center
             .col-md-3:last-child
                 display: flex
                 justify-content: flex-end
@@ -43,8 +47,12 @@ main
                     justify-content: flex-start
                     align-items: center
                     flex-direction: column
+                    img
+                        width: 36px
                     h2
                         text-align: center
+                        font-size: 16px
+                        font-weight: 500
 footer
     .container
         .row
@@ -73,11 +81,73 @@ footer
                                 height: 24px
                                 display: inline-block
                                 margin-right: 10px
-                            #icon-dribbble
-                                background-image: url('https://hyperfantasy.co/assets/styles/images/icon-social-media-dribbble.png')
-                            #icon-instagram
-                                background-image: url('https://hyperfantasy.co/assets/styles/images/icon-social-media-instagram.png')
+                    ul
+                        li
+                            a
+                                #icon-dribbble
+                                    background-image: url('https://hyperfantasy.co/assets/styles/images/icon-social-media-dribbble.png')
+                                #icon-instagram
+                                    background-image: url('https://hyperfantasy.co/assets/styles/images/icon-social-media-instagram.png')
+                        li:first-child
+                            padding: 0 0
+                            margin-right: 10px
+
 
                     li:first-child
                         font-size: 12px
                         margin-right: 24px
+
+@media (max-width: 768px)
+    header
+        .container
+            .row
+                .col-md-6
+                    display: none
+                .col-md-3:last-child
+                    display: none
+    main
+        .section-opening
+            .container
+                h1
+                    font-size: 36px
+    footer
+        .container
+            .row
+                padding: 56px 0 0
+                >div
+                    display: flex
+                    align-items: center
+                .col-md-5
+                    justify-content: center
+                    ul
+                        flex-direction: column
+                        padding: 1.25em 0
+                        li
+                            padding: 0.35em 0
+                        ul
+                            flex-direction: row
+                .col-md-5:first-child
+                    order: 2
+                .col-md-2:nth-child(2)
+                    order: 1
+                .col-md-5:last-child
+                    order: 3
+                    justify-content: center
+                    ul
+                        li:first-child
+                            margin: 0
+                        li
+                            a
+                                span
+                                    display: block
+                                    margin: 0 auto
+                        ul
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            li:first-child
+                                padding: 1em
+                                margin: 0
+                            li 
+                                padding: 1em
+                                margin: 0
