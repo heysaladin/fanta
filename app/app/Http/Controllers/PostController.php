@@ -16,7 +16,7 @@ class PostController extends Controller
     public function index()
     {
         //fetch 5 posts from database which are active and latest
-        $posts = Posts::where('active',1)->orderBy('real_date','desc')->paginate(12);
+        $posts = Posts::where('active',1)->whereIn('open',[1,8])->orderBy('real_date','desc')->paginate(12);
         //page heading
         $title = 'Latest Posts';
         //return home.blade.php template from resources/views folder
@@ -179,7 +179,7 @@ class PostController extends Controller
 
   public function category(Request $request, $id)
   {
-    $posts = Posts::where('category_id',$id)->where('active',1)->orderBy('real_date','desc')->paginate(12);
+    $posts = Posts::where('category_id',$id)->where('open',1)->where('active',1)->orderBy('real_date','desc')->paginate(12);
     //page heading
     $title = 'Posts by category';
     //return home.blade.php template from resources/views folder
@@ -196,7 +196,7 @@ class PostController extends Controller
   }
   public function exploration()
   {
-      $posts = Posts::where('is_real_project',0)->orderBy('real_date','desc')->paginate(12);
+      $posts = Posts::where('is_real_project',0)->whereIn('open',[1,8])->orderBy('real_date','desc')->paginate(12);
       //page heading
       $title = 'Exploration';
       //return home.blade.php template from resources/views folder
@@ -204,9 +204,17 @@ class PostController extends Controller
   }
   public function real_project()
   {
-      $posts = Posts::where('is_real_project',1)->orderBy('real_date','desc')->paginate(12);
+      $posts = Posts::where('is_real_project',1)->whereIn('open',[1,8])->orderBy('real_date','desc')->paginate(12);
       //page heading
       $title = 'Real Project';
+      //return home.blade.php template from resources/views folder
+      return view('home')->withPosts($posts)->withTitle($title);
+  }
+  public function private()
+  {
+      $posts = Posts::whereIn('open',[0,7])->orderBy('real_date','desc')->paginate(12);
+      //page heading
+      $title = 'Private';
       //return home.blade.php template from resources/views folder
       return view('home')->withPosts($posts)->withTitle($title);
   }
@@ -221,7 +229,7 @@ class PostController extends Controller
   }
   public function category_exploration(Request $request, $id)
   {
-    $posts = Posts::where('category_id',$id)->where('is_real_project',0)->where('active',1)->orderBy('real_date','desc')->paginate(12);
+    $posts = Posts::where('category_id',$id)->where('is_real_project',0)->where('active',1)->whereIn('open',[1,8])->orderBy('real_date','desc')->paginate(12);
     //page heading
     $title = 'Posts by category';
     //return home.blade.php template from resources/views folder
@@ -229,7 +237,15 @@ class PostController extends Controller
   }
   public function category_real_project(Request $request, $id)
   {
-    $posts = Posts::where('category_id',$id)->where('is_real_project',1)->where('active',1)->orderBy('real_date','desc')->paginate(12);
+    $posts = Posts::where('category_id',$id)->where('is_real_project',1)->where('active',1)->whereIn('open',[1,8])->orderBy('real_date','desc')->paginate(12);
+    //page heading
+    $title = 'Posts by category';
+    //return home.blade.php template from resources/views folder
+    return view('home')->withPosts($posts)->withTitle($title);
+  }
+  public function category_private(Request $request, $id)
+  {
+    $posts = Posts::where('category_id',$id)->where('active',1)->whereIn('open',[0,7])->orderBy('real_date','desc')->paginate(12);
     //page heading
     $title = 'Posts by category';
     //return home.blade.php template from resources/views folder

@@ -23,6 +23,7 @@
         <option value="{{ url('curated') }}">Curated</option>
         <option value="{{ url('exploration') }}">Exploration</option>
         <option value="{{ url('real-project') }}">Real Project</option>
+        <option value="{{ url('private') }}">Private</option>
       </select>
       <script>
         var currentUrl = window.location.href;
@@ -38,7 +39,10 @@
           } else if(lastWord == 'real-project') {
             var activeFilter = "http://app.hyperfantasy.local"+"/real-project";
             baseFilter.value = activeFilter;
-          }else if(lastWord != 'curated' || lastWord != 'exploration' || lastWord != 'real-project') {
+          } else if(lastWord == 'private') {
+            var activeFilter = "http://app.hyperfantasy.local"+"/private";
+            baseFilter.value = activeFilter;
+          } else if(lastWord != 'curated' || lastWord != 'exploration' || lastWord != 'real-project') {
             lastWord = '';
           }
         } else {

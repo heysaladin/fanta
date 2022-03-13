@@ -19,12 +19,14 @@ Route::get('/home', ['as' => 'home', 'uses' => 'App\Http\Controllers\PostControl
 Route::get('curated', 'App\Http\Controllers\PostController@curated');
 Route::get('exploration', 'App\Http\Controllers\PostController@exploration');
 Route::get('real-project', 'App\Http\Controllers\PostController@real_project');
+Route::get('private', 'App\Http\Controllers\PostController@private');
 
 Route::get('/posts/category/{id}', 'App\Http\Controllers\PostController@category');
 
 Route::get('/posts/category/{id}/curated', 'App\Http\Controllers\PostController@category_curated');
 Route::get('/posts/category/{id}/exploration', 'App\Http\Controllers\PostController@category_exploration');
 Route::get('/posts/category/{id}/real-project', 'App\Http\Controllers\PostController@category_real_project');
+Route::get('/posts/category/{id}/private', 'App\Http\Controllers\PostController@category_private');
 
 Route::get('categories', 'App\Http\Controllers\CategoryController@index');
 // add categories
