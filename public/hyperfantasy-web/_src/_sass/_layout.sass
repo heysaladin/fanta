@@ -22,19 +22,30 @@ header
 main
     div
         .container
-                h2
-                    display: block
-                    text-align: center
+            margin: 150px 0
+            h2
+                margin-bottom: 64px
+                display: block
+                text-align: center
     .section-opening
         .container
+            padding: 0 0 150px
             h1
                 font-weight: 600
                 font-size: 86px
                 line-height: 135%
             h1, p, span, a
                 text-align: center
-            span, a
+            span
                 display: block
+                font-size: 20px
+                a
+                    display: inline-block
+                    background: blue
+                    padding: 16px 32px
+                    margin: 24px auto
+                    background: linear-gradient(256.86deg, #0CF1D7 -37.8%, #114EF7 58.71%, #A91BFF 102.4%, #FC7541 123.84%), #FFFFFF
+                    border-radius: 48px
     .section-how-work
         .container
             .row
@@ -56,11 +67,53 @@ main
                         text-align: center
                         font-size: 16px
                         font-weight: 500
+    .section-works
+        .container
+            .card-work
+                padding: 180px
+                background: #181346
+                border-radius: 32px
+                min-height: 100px
+                margin: 60px 0
+    .section-shots
+        .container
+            .row
+                div
+                    img
+                        max-width: 100%
+                        height: auto
+                        border-radius: 8px
+            .flex-center
+                margin: 48px auto
+    .section-clients
+        .container
+            .row
+                div
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    img
+                        max-width: 100%
+                        max-height: 100%
     .section-action
         .container
-            a
+            padding: 100px
+            background: #060029
+            border-radius: 24px
+            h2
+                margin-bottom: 48px
+            span
                 display: block
+                font-size: 20px
                 text-align: center
+                a
+                    text-align: center
+                    display: inline-block
+                    background: blue
+                    padding: 16px 32px
+                    margin: 0px auto
+                    background: linear-gradient(256.86deg, #0CF1D7 -37.8%, #114EF7 58.71%, #A91BFF 102.4%, #FC7541 123.84%), #FFFFFF
+                    border-radius: 48px
 footer
     .container
         .row
