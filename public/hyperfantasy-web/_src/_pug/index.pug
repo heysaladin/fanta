@@ -5,37 +5,39 @@ html(lang="en-GB")
 		title Hyperfantasy
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		meta(http-equiv='Cache-Control: max-age=31536000', content='public')
+		//- meta(http-equiv='Content-Security-Policy', content="default-src 'self';")
 		meta(name='description', content='Some description')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		link(rel="stylesheet" href="main.css")
-		link(rel="stylesheet", href="https://cdn.jsdelivr.net/gh/dmhendricks/bootstrap-grid-css@4.1.3/dist/css/bootstrap-grid.min.css")
+		link(rel="stylesheet", href="https://cdn.jsdelivr.net/gh/dmhendricks/bootstrap-grid-css@4.1.3/dist/css/bootstrap-grid.min.css", async)
 		link(rel="shortcut icon", href="https://hyperfantasy.co/favicon.ico", type="image/x-icon")
 		link(rel="preconnect", href="https://fonts.googleapis.com")
 		link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
-		link(href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap", rel="stylesheet")
+		link(href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap", rel="stylesheet", async)
 	body
 		.bootstrap-wrapper
 			header
 				.container
 					.row
 						.col-md-3
-							img(src="https://hyperfantasy.co/assets/styles/images/logo_mark_hyperfantasy.png", width=56, alt="Hyperfantasy Logo")
+							img(src="https://hyperfantasy.co/assets/styles/images/logo_mark_hyperfantasy.png", width=56, height=52.69, alt="Hyperfantasy Logo")
 						.col-md-6
 							ul
 								li
-									a(href="#") Home
+									a(href="#", alt="Home") Home
 								li
-									a(href="#") About
+									a(href="#", alt="About") About
 								li
-									a(href="#") Services
+									a(href="#", alt="Services") Services
 								li
-									a(href="#") Works
+									a(href="#", alt="Works") Works
 								li
-									a(href="#") Trust
+									a(href="#", alt="Trust") Trust
 								li
-									a(href="#") Contact
+									a(href="#", alt="Contact") Contact
 						.col-md-3
-							a.button.ghost(href="https://www.instagram.com/hyperfantasy.creative", target="_blank") Portfolio
+							a.button.ghost(href="https://www.instagram.com/hyperfantasy.creative", target="_blank", alt="Portfolio") Portfolio
 			main
 				.section.section-opening
 					.container
@@ -43,37 +45,37 @@ html(lang="en-GB")
 						//- p We are Hyperfantasy, creative team that love to solve problem &amp; building awesome digital experiences
 						span Have any fantasy?
 						span
-							a(href="mailto:hello.hyperfantasy@gmail.com") Let’s talk!
+							a(href="mailto:hello.hyperfantasy@gmail.com", alt="mailto:hello.hyperfantasy@gmail.com") Let&apos;s talk!
 				.section.section-how-work
 					.container
 						h2 What we do?
 						.row
 							.icon-item.col-5.col-sm-3.col-md-3.col-lg-2
-								img(src="assets/img/icon/airplay.svg", width=64, alt="Hyperfantasy Work - UI Design")
+								img(src="assets/img/icon/airplay.svg", width=36, height=36, alt="Hyperfantasy Work - UI Design")
 								h2 UI Design
 							.icon-item.col-5.col-sm-3.col-md-3.col-lg-2
-								img(src="assets/img/icon/smile.svg", width=64, alt="Hyperfantasy Work - UX Design")
+								img(src="assets/img/icon/smile.svg", width=36, height=36, alt="Hyperfantasy Work - UX Design")
 								h2 UX Design
 							.icon-item.col-5.col-sm-3.col-md-3.col-lg-2
-								img(src="assets/img/icon/image.svg", width=64, alt="Hyperfantasy Work - Illustration")
+								img(src="assets/img/icon/image.svg", width=36, height=36, alt="Hyperfantasy Work - Illustration")
 								h2 Illustration
 							.icon-item.col-5.col-sm-3.col-md-3.col-lg-2
-								img(src="assets/img/icon/codesandbox.svg", width=64, alt="Hyperfantasy Work - 3D Design")
+								img(src="assets/img/icon/codesandbox.svg", width=36, height=36, alt="Hyperfantasy Work - 3D Design")
 								h2 3D Design
 							.icon-item.col-5.col-sm-3.col-md-3.col-lg-2
-								img(src="assets/img/icon/printer.svg", width=64, alt="Hyperfantasy Graphic Design")
+								img(src="assets/img/icon/printer.svg", width=36, height=36, alt="Hyperfantasy Graphic Design")
 								h2 Graphic Design
 							.icon-item.col-5.col-sm-3.col-md-3.col-lg-2
-								img(src="assets/img/icon/chrome.svg", width=64, alt="Hyperfantasy Work - Branding")
+								img(src="assets/img/icon/chrome.svg", width=36, height=36, alt="Hyperfantasy Work - Branding")
 								h2 Branding
 							.icon-item.col-5.col-sm-3.col-md-3.col-lg-2
-								img(src="assets/img/icon/layout.svg", width=64, alt="Hyperfantasy Work - Web Development")
+								img(src="assets/img/icon/layout.svg", width=36, height=36, alt="Hyperfantasy Work - Web Development")
 								h2 Web Development
 							.icon-item.col-5.col-sm-3.col-md-3.col-lg-2
-								img(src="assets/img/icon/smartphone.svg", width=64, alt="Hyperfantasy Work - Mobile App Dev.")
+								img(src="assets/img/icon/smartphone.svg", width=36, height=36, alt="Hyperfantasy Work - Mobile App Dev.")
 								h2 Mobile App Dev.
 							.icon-item.col-xs-5.col-sm-4.col-md-3.col-lg-2
-								img(src="assets/img/icon/play-circle.svg", width=64, alt="Hyperfantasy Work - Micro Motion")
+								img(src="assets/img/icon/play-circle.svg", width=36, height=36, alt="Hyperfantasy Work - Micro Motion")
 								h2 Micro Motion
 				.section.section-works
 					.container
@@ -84,10 +86,10 @@ html(lang="en-GB")
 								h3 Lentera Kita
 								p We are Hyperfantasy, creative team that love to solve problem and building awesome digital products. Again, awesome ones.
 							.col-12.col-sm-12.col-md-6.col-lg-6
-								img(src="assets/img/card-phone-right.png", width=64, alt="Card Phone Right")
+								img(src="assets/img/card-phone-right.png", width=368, height=400, alt="Card Phone Right")
 						.row.card-work
 							.col-12.col-sm-12.col-md-6.col-lg-6
-								img(src="assets/img/card-phone-left.png", width=64, alt="Card Phone Left")
+								img(src="assets/img/card-phone-left.png", width=368, height=400, alt="Card Phone Left")
 							.col-12.col-sm-12.col-md-6.col-lg-6
 								span Conservation App
 								h3 Kalaweit
@@ -97,37 +99,37 @@ html(lang="en-GB")
 								span Healthy App
 								h3 BOKIA 
 									span (Buku Online Kesehatan Ibu &amp; Anak)
-								p Online version of Mother &amp; Child Health Book for pregnant women, used by information &amp; media for recording fetal &amp; children's growth &amp; development.
+								p Online version of Mother &amp; Child Health Book for pregnant women, used by information &amp; media for recording fetal &amp; children&apos;s growth &amp; development.
 							.col-12.col-sm-12.col-md-6.col-lg-6
-								img(src="assets/img/card-phone-right.png", width=64, alt="Card Phone Right")
+								img(src="assets/img/card-phone-right.png", width=368, height=400, alt="Card Phone Right")
 				.section.section-shots
 					.container
 						h2 Our Shots
 						.row
 							.col-12.col-sm-6.col-md-6.col-lg-4
-								img(src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/4bfd4c138970509.622809b25f730.png", alt="NFTy Dashboard")
+								img(src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/4bfd4c138970509.622809b25f730.png", alt="NFTy Dashboard", width=350, height=350)
 							.col-12.col-sm-6.col-md-6.col-lg-4
-								img(src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/29e985138970301.622808f0746ba.png", alt="NFTy Mobile App")
+								img(src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/29e985138970301.622808f0746ba.png", alt="NFTy Mobile App", width=350, height=350)
 							.col-12.col-sm-6.col-md-6.col-lg-4
-								img(src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/6b1d54138970043.622807cba6242.png", alt="NFTy Website Landing Page")
+								img(src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/6b1d54138970043.622807cba6242.png", alt="NFTy Website Landing Page", width=350, height=350)
 						.row.flex-center
-							a.button.ghost(href="https://www.instagram.com/hyperfantasy.creative", target="_blank") Portfolio
+							a.button.ghost(href="https://www.instagram.com/hyperfantasy.creative", target="_blank", alt="Portfolio") Portfolio
 				.section.section-clients
 					.container
 						//- h2 Clients
 						.row
 							.col-6.col-sm-3.col-md-3.col-lg-2
-								img(src="https://static.wixstatic.com/media/50d469_aa8f88e1c7ef41b992b033fb9b6ad3d2~mv2.png/v1/crop/x_0,y_9,w_1214,h_356/fill/w_273,h_80,al_c,usm_0.66_1.00_0.01,enc_auto/wolftagon_logo_OK.png", width=180, alt="Wolftagon")
+								img(src="https://static.wixstatic.com/media/50d469_aa8f88e1c7ef41b992b033fb9b6ad3d2~mv2.png/v1/crop/x_0,y_9,w_1214,h_356/fill/w_273,h_80,al_c,usm_0.66_1.00_0.01,enc_auto/wolftagon_logo_OK.png", width=160, height=43.956, alt="Wolftagon")
 							.col-6.col-sm-3.col-md-3.col-lg-2
-								img(src="https://thegreatsoft.com/assets/user/images/kallyas_icon.png", width=56, alt="Greatsoft")
+								img(src="https://thegreatsoft.com/assets/user/images/kallyas_icon.png", width=56, height=60.48, alt="Greatsoft")
 							.col-6.col-sm-3.col-md-3.col-lg-2
-								img(src="https://www.tresnan.co/logo-grey.png", width=180, alt="Tresnan")
+								img(src="https://www.tresnan.co/logo-grey.png", width=160, height=24.75, alt="Tresnan")
 							.col-6.col-sm-3.col-md-3.col-lg-2
-								img(src="https://akasia.id/wp-content/uploads/2021/04/akasia-logo-footer-1.png", width=86, alt="Akasia")
+								img(src="https://akasia.id/wp-content/uploads/2021/04/akasia-logo-footer-1.png", width=86, height=53.31, alt="Akasia")
 							.col-6.col-sm-3.col-md-3.col-lg-2
-								img(src="https://www.tamawal.sa/catalog/view/theme/default/common/en/images/footer/Foot_Logo.png", width=124, alt="Tammwel")
+								img(src="https://www.tamawal.sa/catalog/view/theme/default/common/en/images/footer/Foot_Logo.png", width=124, height=41.33, alt="Tammwel")
 							.col-6.col-sm-3.col-md-3.col-lg-2
-								img(src="http://www.asiansigmatechnology.com/89c9620c82872f46ffd1b7099297efe1.png", width=180, alt="Sigmatech")
+								img(src="assets/img/logo-sigmatech.png", width=160, height=46.65, alt="Sigmatech")
 				//- .section.section-testimonials
 				//- 	.container
 				//- 		h2 Testimonials
@@ -135,35 +137,36 @@ html(lang="en-GB")
 					.container
 						h2 Have any awesome fantasy?
 						span
-							a(href="mailto:hello.hyperfantasy@gmail.com") Let’s talk!
+							a(href="mailto:hello.hyperfantasy@gmail.com", alt="mailto:hello.hyperfantasy@gmail.com") Let&apos;s talk!
 			footer
 				.container
 					.row
 						.col-md-5
 							ul
 								li
-									a(href="#") Home
+									a(href="#", alt="Home") Home
 								//- li
 								//- 	a(href="#") About
 								li
-									a(href="#") Services
+									a(href="#", alt="Services") Services
 								li
-									a(href="#") Works
+									a(href="#", alt="Works") Works
 								li
-									a(href="#") Trust
+									a(href="#", alt="Trust") Trust
 								li
-									a(href="#") Contact
+									a(href="#", alt="Contact") Contact
 						.col-md-2
-							img(src="https://hyperfantasy.co/assets/styles/images/logo_mark_hyperfantasy.png", width=48, alt="Hyperfantasy Logo")
+							img(src="https://hyperfantasy.co/assets/styles/images/logo_mark_hyperfantasy.png", width=48, height=45.26, alt="Hyperfantasy Logo")
 						.col-md-5
 							ul
 								li
-									a(href="https://www.instagram.com/hyperfantasy.creative", target="_blank") © 2022, Hyperfantasy. All rights reserved.
-								ul
-									li
-										a(class="icon-link",href="https://dribbble.com/hyperfantasy")
-											span(class="icon",id="icon-dribbble")
-		
-									li
-										a(class="icon-link",href="https://www.instagram.com/hyperfantasy.creative")
-											span(class="icon",id="icon-instagram")
+									a(href="https://www.instagram.com/hyperfantasy.creative", target="_blank", alt="© 2022, Hyperfantasy. All rights reserved.") © 2022, Hyperfantasy. All rights reserved.
+								li
+									ul
+										li
+											a(class="icon-link", href="https://dribbble.com/hyperfantasy", alt="Dribbble", aria-label="Dribbble")
+												span(class="icon", id="icon-dribbble")
+			
+										li
+											a(class="icon-link", href="https://www.instagram.com/hyperfantasy.creative", alt="Instagram", aria-label="Instagram")
+												span(class="icon", id="icon-instagram")
