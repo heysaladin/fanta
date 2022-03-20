@@ -61,7 +61,7 @@
       </p>
     @endforeach
     @else
-    <p>You have not written any post till now.</p>
+    <p style="text-align: center; padding: 100px 0;">You have not written any post till now.</p>
     @endif
   </div>
 </div>
@@ -78,7 +78,7 @@
     @endforeach
     @else
     <div class="list-group-item">
-      <p>You have not commented till now. Your latest 5 comments will be displayed here</p>
+      <p style="text-align: center; padding: 100px 0;">You have not commented till now. Your latest 5 comments will be displayed here</p>
     </div>
     @endif
   </div>

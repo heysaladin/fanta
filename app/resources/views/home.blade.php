@@ -51,7 +51,36 @@
         }
       </script>
       <style>
-        #base_filter{
+        select {
+          border: none;
+          border-radius: 8px;
+          outline: none;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          -webkit-transition: color 200ms ease;
+          transition: color 200ms ease;
+          color: #6e6d7a;
+          -webkit-box-shadow: 0px 0px 0px 1px #e7e7e9 inset;
+          box-shadow: 0px 0px 0px 1px #e7e7e9 inset;
+
+          padding: 10px 35px 10px 16px;
+
+          background: transparent url('/images/chevron-down.png') no-repeat right center;
+          background-size: 21px;
+          background-position: 94% 50%;
+
+          /* reset */
+
+          margin: 0;      
+          /* -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box; */
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          }
+
+        /* #base_filter{
           font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
           font-size: 14px;
           font-weight: 400;
@@ -71,7 +100,6 @@
           -webkit-box-sizing: border-box;
           box-sizing: border-box;
           padding-right: 35px;
-          text-ali
 
           display: inline-block;
           position: relative;
@@ -84,13 +112,13 @@
           border: none;
           border-radius: 8px;
           outline: none;
-          /* background: #ea4c89; */
+          /* background: #ea4c89; * /
           text-align: center;
           text-decoration: none;
           cursor: pointer;
           /* -webkit-appearance: none;
           -moz-appearance: none;
-          appearance: none; */
+          appearance: none; * /
           font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
           font-size: 14px;
           font-weight: 500;
@@ -98,6 +126,20 @@
 
           margin: -10px 0 0 0;
         }
+
+        #base_filter {
+          position: relative;
+          -webkit-appearance: none !important;
+          -moz-appearance: none !important;
+          appearance: none !important;
+        }
+        #base_filter:after {
+          content: "V";
+          font-size: 1rem;
+          top: 6px;
+          right: 10px;
+          position: absolute;
+        } */
       </style>
 
       <div class="filter-categories js-filter-categories js-shot-categories">
@@ -209,7 +251,7 @@ a:link, a:visited {
 @section('content')
 @if(isset($posts))
 @if ( !$posts->count() )
-There is no post till now. Login and write a new post now!!!
+<p style="text-align: center; padding: 100px 0;">There is no post till now. Login and write a new post now!!!</p>
 @else
 <div class="scrolling-pagination">
 <!-- <ol class="   scrolling-pagination   js-thumbnail-grid shots-grid group dribbbles container-fluid"> -->

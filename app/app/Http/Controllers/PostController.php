@@ -117,7 +117,7 @@ class PostController extends Controller
       $copyright = $request->get('copyright');
       $support_author_id = $request->get('support_author_id');
 
-      $slug = Str::slug($title);
+      $slug = Str::slug($request->input('title'));
       $duplicate = Posts::where('slug', $slug)->first();
       if ($duplicate) {
         if ($duplicate->id != $post_id) {
@@ -150,6 +150,8 @@ class PostController extends Controller
       $post->meta_desc = $meta_desc;
       $post->copyright = $copyright;
       $post->support_author_id = $support_author_id;
+
+      $post->slug = $slug;
 
       $post->save();
       return redirect($landing)->withMessage($message);
