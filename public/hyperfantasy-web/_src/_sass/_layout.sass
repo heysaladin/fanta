@@ -41,12 +41,14 @@ main
                     display: flex,
                     justify-content: flex-end,
                     margin: -86px 0 0 0
+                    z-index: 1
+                    position: absolute
+                    right: 0
                     .slider-arrow
                         width: 48px
                         height: 48px
                         font-size: 32px
                         border-radius: 50%
-                        padding: 0 1px 3px 2px
                         border: none
                         margin: 0 2px
                         background: #181346
@@ -54,9 +56,15 @@ main
                         font-weight: 200
                         cursor: pointer,
                         color: rgba(255, 255, 255, 0.94)
+                    .slider-arrow:nth-child(2)
+                        padding: 0 1px 2px 2px
                     .slider-arrow:nth-child(1)
+                        padding: 0 2px 2px 1px
                         background: none,
-                        color: rgba(255, 255, 255, 0.72)
+                        color: rgba(255, 255, 255, 0.56)
+                    .slider-arrow:nth-child(1):hover
+                        background: #181346
+                        color: rgba(255, 255, 255, 0.94)
     .section-opening
         .container
             padding: 0 0 150px
@@ -85,20 +93,22 @@ main
                     .glide
                         width: 418px
                         height: 418px
-                        li.glide__slide
+                        .glide__track
+                            overflow: hidden
                             border-radius: 16px
-                            .card
-                                width: 418px
-                                height: 418px
-                                left: 137.25px
-                                background: #2B277C
-                                border-radius: 16px
-                            #card-about-1
-                                background: #2B277C
-                            #card-about-2
-                                background: #5226b9
-                            #card-about-3
-                                background: #5c17b6
+                            li.glide__slide
+                                .card
+                                    width: 418px
+                                    height: 418px
+                                    left: 137.25px
+                                    background: #2B277C
+                                    border-radius: 16px
+                                #card-about-1
+                                    background: #2B277C
+                                #card-about-2
+                                    background: #5226b9
+                                #card-about-3
+                                    background: #5c17b6
                         .glide__bullets
                             bottom: -32px
                     .glide:before
@@ -240,7 +250,7 @@ main
                         line-height: 160%
                         color: rgba(255, 255, 255, 0.72)
                     .testimony-identity
-                        padding-bottom: 32px
+                        padding-bottom: 48px
                         span
                             text-align: left
                             display: block
