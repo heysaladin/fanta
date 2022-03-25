@@ -27,6 +27,36 @@ main
                 margin-bottom: 64px
                 display: block
                 text-align: center
+    .section
+        .container
+            .glide
+                .glide__track
+                    .glide__slides
+                        .glide__slide
+                            border: 1px solid black
+                            line-height: 100px
+                            margin: 0
+                            text-align: center
+                .slider-controls
+                    display: flex,
+                    justify-content: flex-end,
+                    margin: -86px 0 0 0
+                    .slider-arrow
+                        width: 48px
+                        height: 48px
+                        font-size: 32px
+                        border-radius: 50%
+                        padding: 0 1px 3px 2px
+                        border: none
+                        margin: 0 2px
+                        background: #181346
+                        color: white
+                        font-weight: 200
+                        cursor: pointer,
+                        color: rgba(255, 255, 255, 0.94)
+                    .slider-arrow:nth-child(1)
+                        background: none,
+                        color: rgba(255, 255, 255, 0.72)
     .section-opening
         .container
             padding: 0 0 150px
@@ -52,12 +82,35 @@ main
             .row
                 align-items: center
                 div
-                    .card
+                    .glide
                         width: 418px
                         height: 418px
-                        left: 137.25px
-                        background: #2B277C
-                        border-radius: 16px
+                        li.glide__slide
+                            border-radius: 16px
+                            .card
+                                width: 418px
+                                height: 418px
+                                left: 137.25px
+                                background: #2B277C
+                                border-radius: 16px
+                            #card-about-1
+                                background: #2B277C
+                            #card-about-2
+                                background: #5226b9
+                            #card-about-3
+                                background: #5c17b6
+                        .glide__bullets
+                            bottom: -32px
+                    .glide:before
+                        content: ""
+                        background: #15125C
+                        width: 160px
+                        height: 160px
+                        border-radius: 32px
+                        display: block
+                        position: absolute
+                        top: -26px
+                        left: -30px
                     .before-title
                         text-align: left
                     h2
@@ -180,13 +233,16 @@ main
                         height: 36px
                         background: transparent url('assets/img/quote.svg') no-repeat center center
                     p
+                        text-align: left
                         font-style: normal
                         font-weight: 400
                         font-size: 20px
                         line-height: 160%
                         color: rgba(255, 255, 255, 0.72)
                     .testimony-identity
+                        padding-bottom: 32px
                         span
+                            text-align: left
                             display: block
                         .testimony-name
                             font-style: normal
@@ -194,6 +250,7 @@ main
                             font-size: 24px
                             line-height: 33px
                             color: #FFFFFF
+                            margin-bottom: 8px
                         .testimony-role
                             font-style: normal
                             font-weight: 400

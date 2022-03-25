@@ -97,6 +97,22 @@ function images() {
 }
 
 
+
+/*----- process js --------------------------------------------*/
+const jsConfig = {
+	src:	dir.src		+ './main.js',
+	watch:	dir.src		+ './main.js',
+	dist:	dir.dest	+ '.',
+};
+
+function js() {
+	return gulp.src(jsConfig.src)
+		.pipe(gulp.dest(jsConfig.dist))
+		.pipe(browsersync.stream())
+	;
+}
+
+
 /*----- browserSync -----------------------------------------------*/
 function browserSync(done) {
 	browsersync.init({
@@ -127,11 +143,12 @@ function watchFiles() {
 		gulp.series(browserSyncReload)
 	);
 	gulp.watch(imgConfig.watch, images);
+	gulp.watch(jsConfig.watch, js);
 }
 
 
 /*----- gulp routines ---------------------------------------------*/
-const build		= gulp.series(clean, html, gulp.parallel(css, images));
+const build		= gulp.series(clean, html, gulp.parallel(css, js, images));
 const watch		= gulp.parallel(watchFiles, browserSync);
 
 
@@ -139,6 +156,7 @@ const watch		= gulp.parallel(watchFiles, browserSync);
 exports.clean	= clean;
 exports.html	= html;
 exports.css		= css;
+exports.js		= js;
 exports.images	= images;
 exports.build	= build;
 exports.watch	= watch;
