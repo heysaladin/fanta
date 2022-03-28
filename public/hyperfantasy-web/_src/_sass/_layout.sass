@@ -67,7 +67,7 @@ main
                         color: rgba(255, 255, 255, 0.94)
     .section-opening
         .container
-            padding: 0 0 150px
+            padding-bottom: 150px
             h1
                 font-weight: 600
                 font-size: 86px
@@ -86,7 +86,7 @@ main
                     border-radius: 48px
     .section-about
         .container
-            padding: 0 0 64px
+            padding-bottom: 64px
             .row
                 align-items: center
                 div
@@ -223,6 +223,8 @@ main
                         max-width: 100%
                         height: auto
                         border-radius: 8px
+                        margin: 0px auto 24px
+                        display: block
             .flex-center
                 margin: 48px auto
     .section-clients
@@ -349,10 +351,55 @@ footer
                 .col-md-3:last-child
                     display: none
     main
+        .section
+            .container
+                margin: 100px auto
+                .glide
+                    .slider-controls
+                        margin: -64px 0 0 0
         .section-opening
             .container
                 h1
                     font-size: 36px
+        
+        .section-about
+            .container
+                .row
+                    div
+                        .glide
+                            width: 300px
+                            height: 300px
+                            margin: 0 auto
+                            .glide__track
+                                li.glide__slide
+                                    .card
+                                        width: 300px
+                                        height: 300px
+                    div:nth-child(2)
+                        margin-top: 86px
+        .section-works
+            .container
+                .card-work
+                    padding: 32px 16px
+                    margin: 24px 0
+                    div
+                        img
+                            // display: none
+                            position: relative
+                            height: 240px
+                            width: auto
+                            top: 0
+                            margin: 24px auto
+                .card-work:nth-child(4)
+                    div
+                        img
+                            margin: 24px auto
+        .section-action
+            .container
+                padding: 48px
+                h2
+                    font-size: 40px
+                    line-height: 56px
     footer
         .container
             .row

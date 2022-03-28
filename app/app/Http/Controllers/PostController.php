@@ -181,7 +181,7 @@ class PostController extends Controller
 
   public function category(Request $request, $id)
   {
-    $posts = Posts::where('category_id',$id)->where('open',1)->where('active',1)->orderBy('real_date','desc')->paginate(12);
+    $posts = Posts::where('category_id',$id)->whereIn('open',[1,8])->where('active',1)->orderBy('real_date','desc')->paginate(12);
     //page heading
     $title = 'Posts by category';
     //return home.blade.php template from resources/views folder
