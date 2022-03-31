@@ -33,3 +33,11 @@ window.addEventListener('load', function(){
     glideTestimony.mount();
 
 });
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "78%";
+}
+  
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
