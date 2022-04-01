@@ -3,10 +3,10 @@ body
         height: 100%
         width: 0
         position: fixed
-        z-index: 1
+        z-index: 3
         top: 0
         right: 0
-        background-color: rgba(3,0,23,0.86)
+        background-color: rgba(3,0,23,0.64)
         // /* The image used
         // background-image: none
         // /* Add the blur effect
@@ -21,16 +21,16 @@ body
         /* Add the blur effect
         // filter: blur(25px)
         // -webkit-filter: blur(25px)
-        backdrop-filter: blur(25px)
-        -webkit-backdrop-filter: blur(25px)
+        backdrop-filter: blur(25px) contrast(60%)
+        -webkit-backdrop-filter: blur(25px) contrast(60%)
         overflow-x: hidden
         transition: 0.5s
         padding-top: 100px
         @supports ((-webkit-backdrop-filter: blur(25px)) or (backdrop-filter: blur(25px)))
             .sidenav
                 background-color: rgba(3,0,23,0.86)
-                -webkit-backdrop-filter: blur(25px)
-                backdrop-filter: blur(25px)
+                -webkit-backdrop-filter: blur(25px) contrast(60%)
+                backdrop-filter: blur(25px) contrast(60%)
         a
             padding: 16px 8px 16px 32px
             text-decoration: none
