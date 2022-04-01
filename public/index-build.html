@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>hyperfantasy</title>
+  <meta name="robots" content="index, follow">
+  <meta name="og:title" property="og:title" content="Hyperfantasy Design Studio">
+  <meta name="description" content="Hyperfantasy Design Studio">
+  <meta http-equiv="Cache-control" content="public">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <div id="container" class="container">
+    <img id="main-logo" src="./assets/styles/images/logo_mark_hyperfantasy.png" alt="Image Content - Logo -  HyperFantasy" width="254" height="239"/>
+    <h1>
+      We are building.
+    </h1>
+    <p class="light-blue">
+      Hyperfantasy will be launched soon.
+    </p>
+    <div class="section">
+      <p style="font-size: 18px;">
+        Any idea in mind?
+      </p>
+      <a class="cta" href="mailto:hello.hyperfantasy@gmail.com">Send us an email!</a>
+    </div>
+    <div class="section section-flex">
+      <a class="icon-link" href="https://dribbble.com/hyperfantasy"><span class="icon" id="icon-dribbble"></span><span class="icon-text">hyperfantasy</span></a>
+      <a class="icon-link" href="https://www.instagram.com/hyperfantasy.creative"><span class="icon" id="icon-instagram"></span><span class="icon-text">hyperfantasy.creative</span></a>
+    </div>
+
+  <footer>
+    <span class="light-blue">
+      © 2022, Hyperfantasy. All rights reserved.
+    </span>
+  </footer>
+
+</div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="/__/firebase/8.9.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="/__/firebase/8.9.1/firebase-analytics.js"></script>
+
+  <!-- Initialize Firebase -->
+  <script src="/__/firebase/init.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Avenir Next";
+      font-style: normal;
+      font-weight: normal;
+      color: white;
+      background: #060029 url('./assets/styles/images/bg-blur.png') no-repeat center center;
+      background-size: cover;
+    }
+    h1 {
+      font-weight: Medium;
+      margin: 32px auto 0px;
+      font-size: 58px;
+    }
+    p {
+      font-size: 16px;
+    }
+    .container {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Avenir Next LT Pro Regular', Arial, Helvetica, sans-serif;
+      text-align: center;
+      margin-top: 24px;
+    }
+    .light-blue {
+      color: rgba(255, 255, 255, 0.5);
+    }
+    .cta {
+      border: none;
+      font-weight: bold;
+      text-transform: auto;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(256.86deg, #0CF1D7 -37.8%, #114EF7 58.71%, #A91BFF 102.4%, #FC7541 123.84%);
+      padding: 14px 36px;
+      border-radius: 24px;
+      margin-top: 20px;
+      box-shadow: 0 11px 36px 0 rgb(70 89 138 / 25%);
+      font-weight: medium;
+      letter-spacing: auto;
+      display: block;
+    }
+    .section {
+      margin-top: 32px;
+    }
+    .section-flex {
+      margin-top: 64px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 370px;
+    }
+    .section .icon-link {
+      text-decoration: none;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .icon-text {
+      display: inline-block;
+    }
+    .section .icon {
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      margin-right: 10px;
+    }
+    .section #icon-dribbble {
+      background-image: url('./assets/styles/images/icon-social-media-dribbble.png');
+    }
+    .section #icon-instagram {
+      background-image: url('./assets/styles/images/icon-social-media-instagram.png');
+    }
+    footer {
+      width: 100%;
+      margin: 64px auto 32px;
+      /* height: 32px;
+      position: fixed;
+      bottom: 0; */
+    }
+    footer span {
+      display: block;
+      text-align: center;
+      margin: 0 auto;
+      font-size: 14px;
+    }
+    @media only screen and (max-width: 640px) {
+      .container {
+        height: 97.25vh;
+      }
+      .icon-text {
+        display: none;
+      }
+      .section-flex {
+        width: 100px;
+      }
+      #main-logo {
+        width: 150px;
+        height: auto;
+      }
+    }
+    @media only screen and (max-width: 375px) {
+      .container {
+        height: 100%;
+      }
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) { 
+      //we ready baby
+      if(screen.height < 1000) {
+        document.getElementById('container').style.height  = 'auto';
+      }
+    });
+  </script>
+
+</body>
+
+</html>
