@@ -49,5 +49,5 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     // document.getElementById("mySidenav").style.backgroundColor = "rgba(3,0,23,0.64)";
-    document.getElementById("main").style.filter = "blur(0)";
+    document.getElementById("main").style.filter = "none";
 }
