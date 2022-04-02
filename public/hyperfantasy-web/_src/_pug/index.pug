@@ -6,9 +6,7 @@ html(lang="en-GB")
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
 		meta(http-equiv='Cache-Control: max-age=31536000', content='public')
-		//- meta(http-equiv='Content-Security-Policy', content="default-src 'self';")
 		meta(name='description', content='Some description')
-		//- meta(name='viewport', content='user-scalable=0')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		link(rel="shortcut icon", href="https://hyperfantasy.co/favicon.ico", type="image/x-icon")
 		link(rel="stylesheet" href="main.css")
@@ -16,7 +14,6 @@ html(lang="en-GB")
 		link(rel="preconnect", href="https://fonts.googleapis.com")
 		link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
 		link(href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap", rel="preload", as="style" onload="this.rel='stylesheet'")
-		//- link(rel="stylesheet",type="text/css",href="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.6.6/glider.min.css")
 		link(rel="stylesheet",type="text/css",href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css")
 		link(rel="stylesheet",type="text/css",href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.min.css")
 	body
@@ -28,31 +25,7 @@ html(lang="en-GB")
 			a(href="#section-works", alt="Works", onclick='closeNav()') Works
 			a(href="#section-clients", alt="Trust", onclick='closeNav()') Trust
 			a(href="#section-action", alt="Contact", onclick='closeNav()') Contact
-		//- #mySidenav.sidenav
-		//- 	a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
-		//- 	a(href='#') About
-		//- 	a(href='#') Services
-		//- 	a(href='#') Clients
-		//- 	a(href='#') Contact
 		.bootstrap-wrapper#main
-			//- #main
-			//- nav(role='navigation')
-			//- 	#menuToggle
-			//- 		input(type='checkbox')
-			//- 		span
-			//- 		span
-			//- 		span
-			//- 		ul#menu
-			//- 			a(href='#')
-			//- 				li Home
-			//- 			a(href='#')
-			//- 				li About
-			//- 			a(href='#')
-			//- 				li Info
-			//- 			a(href='#')
-			//- 				li Contact
-			//- 			a(href='https://erikterwan.com/' target='_blank')
-			//- 				li Show me more
 			header
 				.container
 					.row
@@ -244,8 +217,6 @@ html(lang="en-GB")
 							ul
 								li
 									a(href="#section-opening", alt="Home") Home
-								//- li
-								//- 	a(href="#section-about") About
 								li
 									a(href="#section-how-work", alt="Services") Services
 								li
@@ -269,6 +240,5 @@ html(lang="en-GB")
 										li
 											a(class="icon-link", href="https://www.instagram.com/hyperfantasy.creative", alt="Instagram", aria-label="Instagram")
 												span(class="icon", id="icon-instagram")
-	//- script(src="https://cdnjs.cloudflare.com/ajax/libs/glider-js/1.6.6/glider.min.js")
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js")
 	script(type='text/javascript', src='./main.js')
