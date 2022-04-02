@@ -19,7 +19,7 @@ html(lang="en-GB")
 	body
 		#mySidenav.sidenav
 			a.closebtn(href='javascript:void(0)', onclick='closeNav()') &times;
-			a(href="#section-opening", alt="Home", onclick='closeNav()') Home
+			a(href="#main", alt="Home", onclick='closeNav()') Home
 			a(href="#section-about", alt="About", onclick='closeNav()') About
 			a(href="#section-how-work", alt="Services", onclick='closeNav()') Services
 			a(href="#section-works", alt="Works", onclick='closeNav()') Works
@@ -32,7 +32,7 @@ html(lang="en-GB")
 						.col-10.col-sm-10.col-md-3.col-lg-3
 							img(src="assets/img/logo-hyperfantasy-pictogram.svg", width=56, height=52.69, alt="Hyperfantasy Logo")
 						.col-2.col-sm-2.col-md-6.col-lg-6
-							span(style='font-size:30px;cursor:pointer' onclick='openNav()') &#x2630;
+							span#icon-burger(style='font-size:30px;cursor:pointer' onclick='openNav()') &#x2630;
 							ul
 								li
 									a(href="#section-opening", alt="Home") Home
@@ -216,7 +216,7 @@ html(lang="en-GB")
 						.col-md-5
 							ul
 								li
-									a(href="#section-opening", alt="Home") Home
+									a(href="#main", alt="Home") Home
 								li
 									a(href="#section-how-work", alt="Services") Services
 								li
