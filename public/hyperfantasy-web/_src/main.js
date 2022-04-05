@@ -32,6 +32,10 @@ window.addEventListener('load', function(){
     glideHero.mount();
     glideTestimony.mount();
 
+
+    // getVh();
+
+
 });
 
 function openNav() {
@@ -50,4 +54,18 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     // document.getElementById("mySidenav").style.backgroundColor = "rgba(3,0,23,0.64)";
     document.getElementById("main").style.filter = "none";
+}
+
+// ---
+
+function getVh() {
+    var mainHeader = document.getElementById("main-header");
+    var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+    console.log("mainHeader="+mainHeader);
+    console.log("vh="+vh);
+    if(vh<=800){
+        mainHeader.style.marginTop = "-100px";
+    } else {
+        mainHeader.style.marginTop = "0";
+    }
 }
