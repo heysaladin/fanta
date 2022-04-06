@@ -2,11 +2,13 @@ doctype html
 html(lang="en-GB")
 	head
 		meta(charset="utf-8")
-		title Hyperfantasy
+		title Hyperfantasy: Design &amp; Devlopment Team
+		meta(name="robots", content="index, follow")
+		meta(name="og:title", property="og:title", content="Hyperfantasy Design & Devlopment Team")
+		meta(name="description", content="We are Hyperfantasy, we are creative team that love to solve problem &amp; building awesome digital products. Let’s work together!")
 		meta(charset='utf-8')
 		meta(http-equiv='X-UA-Compatible', content='IE=edge')
 		meta(http-equiv='Cache-Control: max-age=31536000', content='public')
-		meta(name='description', content='Some description')
 		meta(name='viewport', content='width=device-width, initial-scale=1')
 		link(rel="shortcut icon", href="https://hyperfantasy.co/favicon.ico", type="image/x-icon")
 		link(rel="stylesheet" href="main.css")
@@ -16,7 +18,23 @@ html(lang="en-GB")
 		link(href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap", rel="preload", as="style" onload="this.rel='stylesheet'")
 		link(rel="stylesheet",type="text/css",href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css")
 		link(rel="stylesheet",type="text/css",href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.min.css")
+		script.
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-WCSQP5F');
+		script(async, src="https://www.googletagmanager.com/gtag/js?id=G-57E8FXQ3TF")
+		script.
+			window.dataLayer = window.dataLayer || []
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date())
+			gtag('config', 'G-57E8FXQ3TF')
 	body
+		noscript
+			iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-WCSQP5F", height="0", width="0", style="display:none;visibility:hidden")
 		#mySidenav.sidenav
 			a.closebtn(href='javascript:void(0)', onclick='closeNav()') &times;
 			a(href="#main", alt="Home", onclick='closeNav()') Home
