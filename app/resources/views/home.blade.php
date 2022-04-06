@@ -29,24 +29,25 @@
         var currentUrl = window.location.href;
         var lastWord = currentUrl.substring(currentUrl.lastIndexOf('/') + 1);
         var baseFilter = document.getElementById('base_filter');
+        var baseUrl = window.location.origin;
         if(lastWord != '') {
           if(lastWord == 'curated') {
-            var activeFilter = "http://app.hyperfantasy.local"+"/curated";
+            var activeFilter = baseUrl+"/curated";
             baseFilter.value = activeFilter;
           } else if(lastWord == 'exploration') {
-            var activeFilter = "http://app.hyperfantasy.local"+"/exploration";
+            var activeFilter = baseUrl+"/exploration";
             baseFilter.value = activeFilter;
           } else if(lastWord == 'real-project') {
-            var activeFilter = "http://app.hyperfantasy.local"+"/real-project";
+            var activeFilter = baseUrl+"/real-project";
             baseFilter.value = activeFilter;
           } else if(lastWord == 'private') {
-            var activeFilter = "http://app.hyperfantasy.local"+"/private";
+            var activeFilter = baseUrl+"/private";
             baseFilter.value = activeFilter;
           } else if(lastWord != 'curated' || lastWord != 'exploration' || lastWord != 'real-project') {
             lastWord = '';
           }
         } else {
-          baseFilter.value = "http://app.hyperfantasy.local";
+          baseFilter.value = baseUrl;
           lastWord = '';
         }
       </script>
