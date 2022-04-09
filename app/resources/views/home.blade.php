@@ -206,7 +206,7 @@
 .filter-categories .category.active > a {
     border-radius: 8px;
     background: rgba(13,12,34,0.05);
-    font-weight: 500;
+    font-weight: 600;
 }
 .filter-categories .category.active a,
 .filter-categories .category a:hover {

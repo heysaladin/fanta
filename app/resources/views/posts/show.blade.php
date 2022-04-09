@@ -15,9 +15,9 @@
 @endsection
 
 @section('title-meta')
-<p>{{ $post->created_at->format('M d,Y \a\t h:i a') }} By <a href="{{ url('/user/'.$post->author_id)}}">{{ $post->author->name }}</a>
+<p>{{ $post->created_at->format('M d,Y \a\t h:i a') }} By <a href="{{ url('/user/'.$post->author_id).'/posts'}}">{{ $post->author->name }}</a>
   @if($post->support_author_id != NULL)
-  x <a href="{{ url('/user/'.$post->support_author_id)}}">{{ $post->support_author->name }}</a>
+  x <a href="{{ url('/user/'.$post->support_author_id).'/posts/collaboration'}}">{{ $post->support_author->name }}</a>
   @endif
 </p>
 @endsection
