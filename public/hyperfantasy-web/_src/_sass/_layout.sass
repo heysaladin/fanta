@@ -443,10 +443,53 @@ footer
     footer
         .container
             .row
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                padding: 56px 0 0
+                >div
+                    display: flex
+                    align-items: center
+                .col-md-5
+                    justify-content: center
+                    ul
+                        flex-direction: column
+                        padding: 1.25em 0
+                        li
+                            padding: 0.35em 0
+                        ul
+                            flex-direction: row
                 .col-md-5:first-child
-                    display: none
+                    display: flex
+                    order: 2
+                    ul
+                        flex-direction: row
+                        li
+                            padding: 1rem
                 .col-md-2:nth-child(2)
-                    display: none
+                    display: flex
+                    order: 1
+                .col-md-5:last-child
+                    order: 3
+                    justify-content: center
+                    ul
+                        li:first-child
+                            margin: 0
+                        li
+                            a
+                                span
+                                    display: block
+                                    margin: 0 auto
+                        ul
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            li:first-child
+                                padding: 1em
+                                margin: 0
+                            li 
+                                padding: 1em
+                                margin: 0
 @media (max-width: 768px)
     header
         .container
@@ -507,43 +550,8 @@ footer
     footer
         .container
             .row
-                padding: 56px 0 0
-                >div
-                    display: flex
-                    align-items: center
                 .col-md-5
-                    justify-content: center
                     ul
                         flex-direction: column
-                        padding: 1.25em 0
-                        li
-                            padding: 0.35em 0
-                        ul
-                            flex-direction: row
                 .col-md-5:first-child
-                    display: flex
-                    order: 2
-                .col-md-2:nth-child(2)
-                    display: flex
-                    order: 1
-                .col-md-5:last-child
-                    order: 3
-                    justify-content: center
-                    ul
-                        li:first-child
-                            margin: 0
-                        li
-                            a
-                                span
-                                    display: block
-                                    margin: 0 auto
-                        ul
-                            display: flex
-                            justify-content: center
-                            align-items: center
-                            li:first-child
-                                padding: 1em
-                                margin: 0
-                            li 
-                                padding: 1em
-                                margin: 0
+                    display: none
