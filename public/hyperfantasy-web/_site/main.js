@@ -10,7 +10,7 @@ window.addEventListener('load', function(){
     //     }
     // });
 
-    document.addEventListener('touchstart', onTouchStart, {passive: true});
+    // document.addEventListener('touchstart', onTouchStart, {passive: true});
 
     var glideHero = new Glide('.hero', {
         // type: 'carousel',
