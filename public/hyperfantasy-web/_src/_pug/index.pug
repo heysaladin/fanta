@@ -36,8 +36,7 @@ html(lang="en-GB")
 		noscript
 			iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-WCSQP5F", height="0", width="0", style="display:none;visibility:hidden")
 		#mySidenav.sidenav
-			a.closebtn(href='/', onclick='closeNav()') &times;
-			//- javascript:void(0)
+			a.closebtn(href='javascript:void(0)', onclick='closeNav()') &times;
 			a(href="#main", alt="Home", onclick='closeNav()') Home
 			a(href="#section-about", alt="About", onclick='closeNav()') About
 			a(href="#section-how-work", alt="Services", onclick='closeNav()') Services
@@ -51,7 +50,7 @@ html(lang="en-GB")
 						.col-10.col-sm-10.col-md-3.col-lg-3
 							img(src="assets/img/logo-hyperfantasy-pictogram.svg", width=56, height=52.69, alt="Hyperfantasy Logo")
 						.col-2.col-sm-2.col-md-6.col-lg-6
-							span#icon-burger(style='font-size:30px;cursor:pointer' onclick='openNav()') &#x2630;
+							span#icon-burger(style='font-size:30px;cursor:pointer', href='javascript:void(0)', onclick='openNav()') &#x2630;
 							ul
 								li
 									a(href="#section-opening", alt="Home") Home
