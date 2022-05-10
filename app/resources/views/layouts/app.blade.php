@@ -86,7 +86,7 @@
 
       <div class="row">
         <div class="panel-heading">
-          <h2>@yield('title')</h2>
+          <h2><strong>@yield('title')</strong></h2>
           @yield('title-meta')
         </div>
       </div>
