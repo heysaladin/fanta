@@ -1,4 +1,4 @@
-# hyperfantasy
-HYPERFANTASY
+# fanta
+FANTA
 
 Web design
